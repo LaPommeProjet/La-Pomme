@@ -8,6 +8,7 @@ namespace La_Pomme
 {
     class Card
     {
+        private int id;
         private string type;
         private string name;
         private int value;
@@ -24,8 +25,9 @@ namespace La_Pomme
         /// <param name="pointsWithoutAsset"></param>
         /// <param name="pointsWithAsset"></param>
         /// <param name="image"></param>
-        public Card(string type, string name, int value, int pointsWithoutAsset, int pointsWithAsset, string image)
+        public Card(int id, string type, string name, int value, int pointsWithoutAsset, int pointsWithAsset, string image)
         {
+            this.id = id;
             this.type = type;
             this.name = name;
             this.value = value;
@@ -41,6 +43,16 @@ namespace La_Pomme
         public int GetValue()
         {
             return value;
+        }
+
+        public string GetImage()
+        {
+            return image;
+        }
+
+        public int GetId()
+        {
+            return id;
         }
     }
 }

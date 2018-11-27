@@ -29,17 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLaPomme));
-            this.flpPlayer1Deck = new System.Windows.Forms.FlowLayoutPanel();
-            this.ptbJ1C1 = new System.Windows.Forms.PictureBox();
-            this.ptbJ1C2 = new System.Windows.Forms.PictureBox();
-            this.ptbJ1C3 = new System.Windows.Forms.PictureBox();
-            this.ptbJ1C4 = new System.Windows.Forms.PictureBox();
-            this.ptbJ1C5 = new System.Windows.Forms.PictureBox();
-            this.ptbJ1C6 = new System.Windows.Forms.PictureBox();
-            this.ptbJ1C7 = new System.Windows.Forms.PictureBox();
-            this.ptbJ1C8 = new System.Windows.Forms.PictureBox();
-            this.ptbJ1C9 = new System.Windows.Forms.PictureBox();
-            this.flpPlayer2Deck = new System.Windows.Forms.FlowLayoutPanel();
             this.ptbJ2C1 = new System.Windows.Forms.PictureBox();
             this.ptbJ2C2 = new System.Windows.Forms.PictureBox();
             this.ptbJ2C3 = new System.Windows.Forms.PictureBox();
@@ -61,19 +50,10 @@
             this.ptbScoreJ1 = new System.Windows.Forms.PictureBox();
             this.lblScoreJ1 = new System.Windows.Forms.Label();
             this.lblScoreJ2 = new System.Windows.Forms.Label();
-            this.pictureBox23 = new System.Windows.Forms.PictureBox();
-            this.pictureBox24 = new System.Windows.Forms.PictureBox();
-            this.flpPlayer1Deck.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C9)).BeginInit();
-            this.flpPlayer2Deck.SuspendLayout();
+            this.ptbJ2PlayedCard = new System.Windows.Forms.PictureBox();
+            this.ptbJ1PlayedCard = new System.Windows.Forms.PictureBox();
+            this.flpPlayer2Deck = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpPlayer1Deck = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C3)).BeginInit();
@@ -87,122 +67,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptbPioche)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAtout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbScoreJ1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2PlayedCard)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1PlayedCard)).BeginInit();
+            this.flpPlayer2Deck.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // flpPlayer1Deck
-            // 
-            this.flpPlayer1Deck.Controls.Add(this.ptbJ1C1);
-            this.flpPlayer1Deck.Controls.Add(this.ptbJ1C2);
-            this.flpPlayer1Deck.Controls.Add(this.ptbJ1C3);
-            this.flpPlayer1Deck.Controls.Add(this.ptbJ1C4);
-            this.flpPlayer1Deck.Controls.Add(this.ptbJ1C5);
-            this.flpPlayer1Deck.Controls.Add(this.ptbJ1C6);
-            this.flpPlayer1Deck.Controls.Add(this.ptbJ1C7);
-            this.flpPlayer1Deck.Controls.Add(this.ptbJ1C8);
-            this.flpPlayer1Deck.Controls.Add(this.ptbJ1C9);
-            this.flpPlayer1Deck.Location = new System.Drawing.Point(12, 447);
-            this.flpPlayer1Deck.Name = "flpPlayer1Deck";
-            this.flpPlayer1Deck.Size = new System.Drawing.Size(736, 107);
-            this.flpPlayer1Deck.TabIndex = 8;
-            // 
-            // ptbJ1C1
-            // 
-            this.ptbJ1C1.Image = global::La_Pomme.Properties.Resources.Kh;
-            this.ptbJ1C1.Location = new System.Drawing.Point(3, 3);
-            this.ptbJ1C1.Name = "ptbJ1C1";
-            this.ptbJ1C1.Size = new System.Drawing.Size(75, 99);
-            this.ptbJ1C1.TabIndex = 5;
-            this.ptbJ1C1.TabStop = false;
-            // 
-            // ptbJ1C2
-            // 
-            this.ptbJ1C2.Image = global::La_Pomme.Properties.Resources.Js;
-            this.ptbJ1C2.Location = new System.Drawing.Point(84, 3);
-            this.ptbJ1C2.Name = "ptbJ1C2";
-            this.ptbJ1C2.Size = new System.Drawing.Size(75, 99);
-            this.ptbJ1C2.TabIndex = 1;
-            this.ptbJ1C2.TabStop = false;
-            // 
-            // ptbJ1C3
-            // 
-            this.ptbJ1C3.Image = global::La_Pomme.Properties.Resources._7s;
-            this.ptbJ1C3.Location = new System.Drawing.Point(165, 3);
-            this.ptbJ1C3.Name = "ptbJ1C3";
-            this.ptbJ1C3.Size = new System.Drawing.Size(75, 99);
-            this.ptbJ1C3.TabIndex = 2;
-            this.ptbJ1C3.TabStop = false;
-            // 
-            // ptbJ1C4
-            // 
-            this.ptbJ1C4.Image = global::La_Pomme.Properties.Resources.Qs;
-            this.ptbJ1C4.Location = new System.Drawing.Point(246, 3);
-            this.ptbJ1C4.Name = "ptbJ1C4";
-            this.ptbJ1C4.Size = new System.Drawing.Size(75, 99);
-            this.ptbJ1C4.TabIndex = 3;
-            this.ptbJ1C4.TabStop = false;
-            // 
-            // ptbJ1C5
-            // 
-            this.ptbJ1C5.Image = global::La_Pomme.Properties.Resources._10d;
-            this.ptbJ1C5.Location = new System.Drawing.Point(327, 3);
-            this.ptbJ1C5.Name = "ptbJ1C5";
-            this.ptbJ1C5.Size = new System.Drawing.Size(75, 99);
-            this.ptbJ1C5.TabIndex = 4;
-            this.ptbJ1C5.TabStop = false;
-            // 
-            // ptbJ1C6
-            // 
-            this.ptbJ1C6.Image = global::La_Pomme.Properties.Resources._6c;
-            this.ptbJ1C6.Location = new System.Drawing.Point(408, 3);
-            this.ptbJ1C6.Name = "ptbJ1C6";
-            this.ptbJ1C6.Size = new System.Drawing.Size(75, 99);
-            this.ptbJ1C6.TabIndex = 6;
-            this.ptbJ1C6.TabStop = false;
-            // 
-            // ptbJ1C7
-            // 
-            this.ptbJ1C7.Image = global::La_Pomme.Properties.Resources._6d;
-            this.ptbJ1C7.Location = new System.Drawing.Point(489, 3);
-            this.ptbJ1C7.Name = "ptbJ1C7";
-            this.ptbJ1C7.Size = new System.Drawing.Size(75, 99);
-            this.ptbJ1C7.TabIndex = 0;
-            this.ptbJ1C7.TabStop = false;
-            // 
-            // ptbJ1C8
-            // 
-            this.ptbJ1C8.Image = global::La_Pomme.Properties.Resources.Ac;
-            this.ptbJ1C8.Location = new System.Drawing.Point(570, 3);
-            this.ptbJ1C8.Name = "ptbJ1C8";
-            this.ptbJ1C8.Size = new System.Drawing.Size(75, 99);
-            this.ptbJ1C8.TabIndex = 7;
-            this.ptbJ1C8.TabStop = false;
-            // 
-            // ptbJ1C9
-            // 
-            this.ptbJ1C9.Image = global::La_Pomme.Properties.Resources._9h;
-            this.ptbJ1C9.Location = new System.Drawing.Point(651, 3);
-            this.ptbJ1C9.Name = "ptbJ1C9";
-            this.ptbJ1C9.Size = new System.Drawing.Size(75, 99);
-            this.ptbJ1C9.TabIndex = 9;
-            this.ptbJ1C9.TabStop = false;
-            // 
-            // flpPlayer2Deck
-            // 
-            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C1);
-            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C2);
-            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C3);
-            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C4);
-            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C5);
-            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C6);
-            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C7);
-            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C8);
-            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C9);
-            this.flpPlayer2Deck.Location = new System.Drawing.Point(12, 12);
-            this.flpPlayer2Deck.Name = "flpPlayer2Deck";
-            this.flpPlayer2Deck.Size = new System.Drawing.Size(736, 107);
-            this.flpPlayer2Deck.TabIndex = 10;
             // 
             // ptbJ2C1
             // 
@@ -409,23 +277,46 @@
             this.lblScoreJ2.TabIndex = 20;
             this.lblScoreJ2.Text = "Score : 0 pt(s)";
             // 
-            // pictureBox23
+            // ptbJ2PlayedCard
             // 
-            this.pictureBox23.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox23.Image")));
-            this.pictureBox23.Location = new System.Drawing.Point(215, 159);
-            this.pictureBox23.Name = "pictureBox23";
-            this.pictureBox23.Size = new System.Drawing.Size(75, 99);
-            this.pictureBox23.TabIndex = 21;
-            this.pictureBox23.TabStop = false;
+            this.ptbJ2PlayedCard.Image = ((System.Drawing.Image)(resources.GetObject("ptbJ2PlayedCard.Image")));
+            this.ptbJ2PlayedCard.Location = new System.Drawing.Point(215, 159);
+            this.ptbJ2PlayedCard.Name = "ptbJ2PlayedCard";
+            this.ptbJ2PlayedCard.Size = new System.Drawing.Size(75, 99);
+            this.ptbJ2PlayedCard.TabIndex = 21;
+            this.ptbJ2PlayedCard.TabStop = false;
             // 
-            // pictureBox24
+            // ptbJ1PlayedCard
             // 
-            this.pictureBox24.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox24.Image")));
-            this.pictureBox24.Location = new System.Drawing.Point(215, 309);
-            this.pictureBox24.Name = "pictureBox24";
-            this.pictureBox24.Size = new System.Drawing.Size(75, 99);
-            this.pictureBox24.TabIndex = 22;
-            this.pictureBox24.TabStop = false;
+            this.ptbJ1PlayedCard.Image = ((System.Drawing.Image)(resources.GetObject("ptbJ1PlayedCard.Image")));
+            this.ptbJ1PlayedCard.Location = new System.Drawing.Point(215, 309);
+            this.ptbJ1PlayedCard.Name = "ptbJ1PlayedCard";
+            this.ptbJ1PlayedCard.Size = new System.Drawing.Size(75, 99);
+            this.ptbJ1PlayedCard.TabIndex = 22;
+            this.ptbJ1PlayedCard.TabStop = false;
+            // 
+            // flpPlayer2Deck
+            // 
+            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C1);
+            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C2);
+            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C3);
+            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C4);
+            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C5);
+            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C6);
+            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C7);
+            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C8);
+            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C9);
+            this.flpPlayer2Deck.Location = new System.Drawing.Point(12, 12);
+            this.flpPlayer2Deck.Name = "flpPlayer2Deck";
+            this.flpPlayer2Deck.Size = new System.Drawing.Size(736, 107);
+            this.flpPlayer2Deck.TabIndex = 10;
+            // 
+            // flpPlayer1Deck
+            // 
+            this.flpPlayer1Deck.Location = new System.Drawing.Point(12, 447);
+            this.flpPlayer1Deck.Name = "flpPlayer1Deck";
+            this.flpPlayer1Deck.Size = new System.Drawing.Size(736, 107);
+            this.flpPlayer1Deck.TabIndex = 8;
             // 
             // frmLaPomme
             // 
@@ -433,8 +324,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaGreen;
             this.ClientSize = new System.Drawing.Size(1012, 561);
-            this.Controls.Add(this.pictureBox24);
-            this.Controls.Add(this.pictureBox23);
+            this.Controls.Add(this.ptbJ1PlayedCard);
+            this.Controls.Add(this.ptbJ2PlayedCard);
             this.Controls.Add(this.lblScoreJ2);
             this.Controls.Add(this.lblScoreJ1);
             this.Controls.Add(this.lblCartesGagneesJ2);
@@ -456,17 +347,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "La Pomme";
             this.Load += new System.EventHandler(this.frmLaPomme_Load);
-            this.flpPlayer1Deck.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C9)).EndInit();
-            this.flpPlayer2Deck.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C3)).EndInit();
@@ -480,26 +360,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptbPioche)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAtout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbScoreJ1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2PlayedCard)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1PlayedCard)).EndInit();
+            this.flpPlayer2Deck.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox ptbJ1C7;
-        private System.Windows.Forms.PictureBox ptbJ1C2;
-        private System.Windows.Forms.PictureBox ptbJ1C3;
-        private System.Windows.Forms.PictureBox ptbJ1C4;
-        private System.Windows.Forms.PictureBox ptbJ1C5;
-        private System.Windows.Forms.PictureBox ptbJ1C1;
-        private System.Windows.Forms.PictureBox ptbJ1C6;
-        private System.Windows.Forms.PictureBox ptbJ1C8;
-        private System.Windows.Forms.FlowLayoutPanel flpPlayer1Deck;
-        private System.Windows.Forms.PictureBox ptbJ1C9;
-        private System.Windows.Forms.FlowLayoutPanel flpPlayer2Deck;
         private System.Windows.Forms.PictureBox ptbJ2C1;
         private System.Windows.Forms.PictureBox ptbJ2C2;
         private System.Windows.Forms.PictureBox ptbJ2C3;
@@ -521,8 +390,10 @@
         private System.Windows.Forms.Label lblCartesGagneesJ2;
         private System.Windows.Forms.Label lblScoreJ1;
         private System.Windows.Forms.Label lblScoreJ2;
-        private System.Windows.Forms.PictureBox pictureBox23;
-        private System.Windows.Forms.PictureBox pictureBox24;
+        private System.Windows.Forms.PictureBox ptbJ2PlayedCard;
+        private System.Windows.Forms.PictureBox ptbJ1PlayedCard;
+        private System.Windows.Forms.FlowLayoutPanel flpPlayer2Deck;
+        private System.Windows.Forms.FlowLayoutPanel flpPlayer1Deck;
     }
 }
 
