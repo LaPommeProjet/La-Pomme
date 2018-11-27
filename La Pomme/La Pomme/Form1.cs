@@ -15,10 +15,13 @@ namespace La_Pomme
     {
         string[] playerNames; // Contains the player 1 name (index 0) and the player 2 name (index 1)
         form2 form2 = new form2(); // Instanciate the second form to set the player names
+        List<Card> cards = new List<Card>(); // Instanciate the cards list
+        private Random random;
 
         public frmLaPomme()
         {
             InitializeComponent();
+            random = new Random(); // Instanciate the random class
         }
 
         private void frmLaPomme_Load(object sender, EventArgs e)
@@ -29,25 +32,40 @@ namespace La_Pomme
             lblPlayer1.Text = playerNames[0]; // Player 1 name
             lblPlayer2.Text = playerNames[1]; // Player 2 name
 
-            /*string filePath = @"cards.csv";
+            string filePath = @"cards.csv";
             StreamReader streamReader = new StreamReader(filePath);
 
-            var everybody = new List<Person>();
+            //Pour ne pas traiter l'entête
+            streamReader.ReadLine();
 
             while (!streamReader.EndOfStream)
             {
                 string[] line = streamReader.ReadLine().Split(';');
-                Person person = new Person(line[0], int.Parse(line[1]));
-                List<int> responses = new List<int>();
+                Card card = new Card(line[0], line[1], int.Parse(line[2]), int.Parse(line[3]), int.Parse(line[4]), line[5]);
 
-                for (int i = 2; i < line.Length; i++)
-                {
-                    responses.Add(int.Parse(line[i]));
-                }
+                cards.Add(card);
+            }
 
-                person.SetResponses(responses);
-                everybody.Add(person);
-            }*/
+            Shuffle(cards); // Call the shuffle function
+        }
+
+        /// <summary>
+        /// Shuffle the cards list
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="list"></param>
+        public void Shuffle<T>(List<T> list)
+        {
+            int listLength = list.Count;
+
+            while (listLength > 1)
+            {
+                listLength--;
+                int randomIndex = random.Next(listLength + 1);
+                T value = list[randomIndex];
+                list[randomIndex] = list[listLength];
+                list[listLength] = value;
+            }
         }
     }
 }
