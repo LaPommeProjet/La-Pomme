@@ -1,6 +1,6 @@
 ﻿namespace La_Pomme
 {
-    partial class Form2
+    partial class form2
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form2));
             this.lblPlayer1 = new System.Windows.Forms.Label();
             this.lblPlayer2 = new System.Windows.Forms.Label();
             this.txtPlayer1 = new System.Windows.Forms.TextBox();
@@ -39,6 +40,7 @@
             // 
             this.lblPlayer1.AutoSize = true;
             this.lblPlayer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayer1.ForeColor = System.Drawing.Color.White;
             this.lblPlayer1.Location = new System.Drawing.Point(40, 46);
             this.lblPlayer1.Name = "lblPlayer1";
             this.lblPlayer1.Size = new System.Drawing.Size(71, 20);
@@ -49,6 +51,7 @@
             // 
             this.lblPlayer2.AutoSize = true;
             this.lblPlayer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayer2.ForeColor = System.Drawing.Color.White;
             this.lblPlayer2.Location = new System.Drawing.Point(40, 98);
             this.lblPlayer2.Name = "lblPlayer2";
             this.lblPlayer2.Size = new System.Drawing.Size(71, 20);
@@ -58,6 +61,7 @@
             // txtPlayer1
             // 
             this.txtPlayer1.Location = new System.Drawing.Point(117, 46);
+            this.txtPlayer1.MaxLength = 30;
             this.txtPlayer1.Name = "txtPlayer1";
             this.txtPlayer1.Size = new System.Drawing.Size(177, 20);
             this.txtPlayer1.TabIndex = 2;
@@ -65,6 +69,7 @@
             // txtPlayer2
             // 
             this.txtPlayer2.Location = new System.Drawing.Point(117, 98);
+            this.txtPlayer2.MaxLength = 30;
             this.txtPlayer2.Name = "txtPlayer2";
             this.txtPlayer2.Size = new System.Drawing.Size(177, 20);
             this.txtPlayer2.TabIndex = 3;
@@ -79,18 +84,24 @@
             this.cmdValidate.UseVisualStyleBackColor = true;
             this.cmdValidate.Click += new System.EventHandler(this.cmdValidate_Click);
             // 
-            // Form2
+            // form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SeaGreen;
             this.ClientSize = new System.Drawing.Size(331, 208);
             this.Controls.Add(this.cmdValidate);
             this.Controls.Add(this.txtPlayer2);
             this.Controls.Add(this.txtPlayer1);
             this.Controls.Add(this.lblPlayer2);
             this.Controls.Add(this.lblPlayer1);
-            this.Name = "Form2";
-            this.Text = "Form2";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.Name = "form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Choix du nom des joueurs";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.form2_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

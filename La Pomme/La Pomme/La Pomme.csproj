@@ -98,5 +98,26 @@
   <ItemGroup>
     <None Include="Resources\6d.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ac.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9h.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10d.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Qs.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7s.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Js.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kh.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

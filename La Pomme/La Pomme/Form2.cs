@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace La_Pomme
 {
-    public partial class Form2 : Form
+    public partial class form2 : Form
     {
         public static string player1Name;
         public static string player2Name;
 
-        public Form2()
+        public form2()
         {
             InitializeComponent();
         }
@@ -27,7 +27,7 @@ namespace La_Pomme
         /// <param name="e"></param>
         private void cmdValidate_Click(object sender, EventArgs e)
         {
-            if(txtPlayer1.Text == "")
+            if(txtPlayer1.Text == String.Empty)
             {
                 player1Name = "Joueur 1";             
             }
@@ -36,7 +36,7 @@ namespace La_Pomme
                 player1Name = txtPlayer1.Text;               
             }
 
-            if(txtPlayer2.Text == "")
+            if(txtPlayer2.Text == String.Empty)
             {
                 player2Name = "Joueur 2";
             }
@@ -57,6 +57,17 @@ namespace La_Pomme
             string[] playerNames = { player1Name, player2Name };
 
             return playerNames;
+        }
+
+        /// <summary>
+        /// Set the default names of the players when the form is closed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void form2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            player1Name = "Joueur 1";
+            player2Name = "Joueur 2";
         }
     }
 }

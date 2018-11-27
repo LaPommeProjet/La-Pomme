@@ -28,352 +28,460 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLaPomme));
             this.flpPlayer1Deck = new System.Windows.Forms.FlowLayoutPanel();
+            this.ptbJ1C1 = new System.Windows.Forms.PictureBox();
+            this.ptbJ1C2 = new System.Windows.Forms.PictureBox();
+            this.ptbJ1C3 = new System.Windows.Forms.PictureBox();
+            this.ptbJ1C4 = new System.Windows.Forms.PictureBox();
+            this.ptbJ1C5 = new System.Windows.Forms.PictureBox();
+            this.ptbJ1C6 = new System.Windows.Forms.PictureBox();
+            this.ptbJ1C7 = new System.Windows.Forms.PictureBox();
+            this.ptbJ1C8 = new System.Windows.Forms.PictureBox();
+            this.ptbJ1C9 = new System.Windows.Forms.PictureBox();
             this.flpPlayer2Deck = new System.Windows.Forms.FlowLayoutPanel();
+            this.ptbJ2C1 = new System.Windows.Forms.PictureBox();
+            this.ptbJ2C2 = new System.Windows.Forms.PictureBox();
+            this.ptbJ2C3 = new System.Windows.Forms.PictureBox();
+            this.ptbJ2C4 = new System.Windows.Forms.PictureBox();
+            this.ptbJ2C5 = new System.Windows.Forms.PictureBox();
+            this.ptbJ2C6 = new System.Windows.Forms.PictureBox();
+            this.ptbJ2C7 = new System.Windows.Forms.PictureBox();
+            this.ptbJ2C8 = new System.Windows.Forms.PictureBox();
+            this.ptbJ2C9 = new System.Windows.Forms.PictureBox();
             this.lblPioche = new System.Windows.Forms.Label();
             this.lblAtout = new System.Windows.Forms.Label();
             this.lblPlayer2 = new System.Windows.Forms.Label();
             this.lblPlayer1 = new System.Windows.Forms.Label();
-            this.pictureBox20 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.pictureBox18 = new System.Windows.Forms.PictureBox();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.pictureBox21 = new System.Windows.Forms.PictureBox();
-            this.pictureBox22 = new System.Windows.Forms.PictureBox();
+            this.lblCartesGagneesJ1 = new System.Windows.Forms.Label();
+            this.lblCartesGagneesJ2 = new System.Windows.Forms.Label();
+            this.ptbScoreJ2 = new System.Windows.Forms.PictureBox();
+            this.ptbPioche = new System.Windows.Forms.PictureBox();
+            this.ptbAtout = new System.Windows.Forms.PictureBox();
+            this.ptbScoreJ1 = new System.Windows.Forms.PictureBox();
+            this.lblScoreJ1 = new System.Windows.Forms.Label();
+            this.lblScoreJ2 = new System.Windows.Forms.Label();
+            this.pictureBox23 = new System.Windows.Forms.PictureBox();
+            this.pictureBox24 = new System.Windows.Forms.PictureBox();
             this.flpPlayer1Deck.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C9)).BeginInit();
             this.flpPlayer2Deck.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbScoreJ2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPioche)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAtout)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbScoreJ1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
             this.SuspendLayout();
             // 
             // flpPlayer1Deck
             // 
-            this.flpPlayer1Deck.Controls.Add(this.pictureBox6);
-            this.flpPlayer1Deck.Controls.Add(this.pictureBox2);
-            this.flpPlayer1Deck.Controls.Add(this.pictureBox3);
-            this.flpPlayer1Deck.Controls.Add(this.pictureBox4);
-            this.flpPlayer1Deck.Controls.Add(this.pictureBox5);
-            this.flpPlayer1Deck.Controls.Add(this.pictureBox7);
-            this.flpPlayer1Deck.Controls.Add(this.pictureBox1);
-            this.flpPlayer1Deck.Controls.Add(this.pictureBox8);
-            this.flpPlayer1Deck.Controls.Add(this.pictureBox9);
-            this.flpPlayer1Deck.Location = new System.Drawing.Point(12, 331);
+            this.flpPlayer1Deck.Controls.Add(this.ptbJ1C1);
+            this.flpPlayer1Deck.Controls.Add(this.ptbJ1C2);
+            this.flpPlayer1Deck.Controls.Add(this.ptbJ1C3);
+            this.flpPlayer1Deck.Controls.Add(this.ptbJ1C4);
+            this.flpPlayer1Deck.Controls.Add(this.ptbJ1C5);
+            this.flpPlayer1Deck.Controls.Add(this.ptbJ1C6);
+            this.flpPlayer1Deck.Controls.Add(this.ptbJ1C7);
+            this.flpPlayer1Deck.Controls.Add(this.ptbJ1C8);
+            this.flpPlayer1Deck.Controls.Add(this.ptbJ1C9);
+            this.flpPlayer1Deck.Location = new System.Drawing.Point(12, 447);
             this.flpPlayer1Deck.Name = "flpPlayer1Deck";
             this.flpPlayer1Deck.Size = new System.Drawing.Size(736, 107);
             this.flpPlayer1Deck.TabIndex = 8;
             // 
+            // ptbJ1C1
+            // 
+            this.ptbJ1C1.Image = global::La_Pomme.Properties.Resources.Kh;
+            this.ptbJ1C1.Location = new System.Drawing.Point(3, 3);
+            this.ptbJ1C1.Name = "ptbJ1C1";
+            this.ptbJ1C1.Size = new System.Drawing.Size(75, 99);
+            this.ptbJ1C1.TabIndex = 5;
+            this.ptbJ1C1.TabStop = false;
+            // 
+            // ptbJ1C2
+            // 
+            this.ptbJ1C2.Image = global::La_Pomme.Properties.Resources.Js;
+            this.ptbJ1C2.Location = new System.Drawing.Point(84, 3);
+            this.ptbJ1C2.Name = "ptbJ1C2";
+            this.ptbJ1C2.Size = new System.Drawing.Size(75, 99);
+            this.ptbJ1C2.TabIndex = 1;
+            this.ptbJ1C2.TabStop = false;
+            // 
+            // ptbJ1C3
+            // 
+            this.ptbJ1C3.Image = global::La_Pomme.Properties.Resources._7s;
+            this.ptbJ1C3.Location = new System.Drawing.Point(165, 3);
+            this.ptbJ1C3.Name = "ptbJ1C3";
+            this.ptbJ1C3.Size = new System.Drawing.Size(75, 99);
+            this.ptbJ1C3.TabIndex = 2;
+            this.ptbJ1C3.TabStop = false;
+            // 
+            // ptbJ1C4
+            // 
+            this.ptbJ1C4.Image = global::La_Pomme.Properties.Resources.Qs;
+            this.ptbJ1C4.Location = new System.Drawing.Point(246, 3);
+            this.ptbJ1C4.Name = "ptbJ1C4";
+            this.ptbJ1C4.Size = new System.Drawing.Size(75, 99);
+            this.ptbJ1C4.TabIndex = 3;
+            this.ptbJ1C4.TabStop = false;
+            // 
+            // ptbJ1C5
+            // 
+            this.ptbJ1C5.Image = global::La_Pomme.Properties.Resources._10d;
+            this.ptbJ1C5.Location = new System.Drawing.Point(327, 3);
+            this.ptbJ1C5.Name = "ptbJ1C5";
+            this.ptbJ1C5.Size = new System.Drawing.Size(75, 99);
+            this.ptbJ1C5.TabIndex = 4;
+            this.ptbJ1C5.TabStop = false;
+            // 
+            // ptbJ1C6
+            // 
+            this.ptbJ1C6.Image = global::La_Pomme.Properties.Resources._6c;
+            this.ptbJ1C6.Location = new System.Drawing.Point(408, 3);
+            this.ptbJ1C6.Name = "ptbJ1C6";
+            this.ptbJ1C6.Size = new System.Drawing.Size(75, 99);
+            this.ptbJ1C6.TabIndex = 6;
+            this.ptbJ1C6.TabStop = false;
+            // 
+            // ptbJ1C7
+            // 
+            this.ptbJ1C7.Image = global::La_Pomme.Properties.Resources._6d;
+            this.ptbJ1C7.Location = new System.Drawing.Point(489, 3);
+            this.ptbJ1C7.Name = "ptbJ1C7";
+            this.ptbJ1C7.Size = new System.Drawing.Size(75, 99);
+            this.ptbJ1C7.TabIndex = 0;
+            this.ptbJ1C7.TabStop = false;
+            // 
+            // ptbJ1C8
+            // 
+            this.ptbJ1C8.Image = global::La_Pomme.Properties.Resources.Ac;
+            this.ptbJ1C8.Location = new System.Drawing.Point(570, 3);
+            this.ptbJ1C8.Name = "ptbJ1C8";
+            this.ptbJ1C8.Size = new System.Drawing.Size(75, 99);
+            this.ptbJ1C8.TabIndex = 7;
+            this.ptbJ1C8.TabStop = false;
+            // 
+            // ptbJ1C9
+            // 
+            this.ptbJ1C9.Image = global::La_Pomme.Properties.Resources._9h;
+            this.ptbJ1C9.Location = new System.Drawing.Point(651, 3);
+            this.ptbJ1C9.Name = "ptbJ1C9";
+            this.ptbJ1C9.Size = new System.Drawing.Size(75, 99);
+            this.ptbJ1C9.TabIndex = 9;
+            this.ptbJ1C9.TabStop = false;
+            // 
             // flpPlayer2Deck
             // 
-            this.flpPlayer2Deck.Controls.Add(this.pictureBox10);
-            this.flpPlayer2Deck.Controls.Add(this.pictureBox11);
-            this.flpPlayer2Deck.Controls.Add(this.pictureBox12);
-            this.flpPlayer2Deck.Controls.Add(this.pictureBox13);
-            this.flpPlayer2Deck.Controls.Add(this.pictureBox14);
-            this.flpPlayer2Deck.Controls.Add(this.pictureBox15);
-            this.flpPlayer2Deck.Controls.Add(this.pictureBox16);
-            this.flpPlayer2Deck.Controls.Add(this.pictureBox17);
-            this.flpPlayer2Deck.Controls.Add(this.pictureBox18);
+            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C1);
+            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C2);
+            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C3);
+            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C4);
+            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C5);
+            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C6);
+            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C7);
+            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C8);
+            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C9);
             this.flpPlayer2Deck.Location = new System.Drawing.Point(12, 12);
             this.flpPlayer2Deck.Name = "flpPlayer2Deck";
             this.flpPlayer2Deck.Size = new System.Drawing.Size(736, 107);
             this.flpPlayer2Deck.TabIndex = 10;
             // 
+            // ptbJ2C1
+            // 
+            this.ptbJ2C1.Image = ((System.Drawing.Image)(resources.GetObject("ptbJ2C1.Image")));
+            this.ptbJ2C1.Location = new System.Drawing.Point(3, 3);
+            this.ptbJ2C1.Name = "ptbJ2C1";
+            this.ptbJ2C1.Size = new System.Drawing.Size(75, 99);
+            this.ptbJ2C1.TabIndex = 5;
+            this.ptbJ2C1.TabStop = false;
+            // 
+            // ptbJ2C2
+            // 
+            this.ptbJ2C2.Image = global::La_Pomme.Properties.Resources.dos;
+            this.ptbJ2C2.Location = new System.Drawing.Point(84, 3);
+            this.ptbJ2C2.Name = "ptbJ2C2";
+            this.ptbJ2C2.Size = new System.Drawing.Size(75, 99);
+            this.ptbJ2C2.TabIndex = 1;
+            this.ptbJ2C2.TabStop = false;
+            // 
+            // ptbJ2C3
+            // 
+            this.ptbJ2C3.Image = global::La_Pomme.Properties.Resources.dos;
+            this.ptbJ2C3.Location = new System.Drawing.Point(165, 3);
+            this.ptbJ2C3.Name = "ptbJ2C3";
+            this.ptbJ2C3.Size = new System.Drawing.Size(75, 99);
+            this.ptbJ2C3.TabIndex = 2;
+            this.ptbJ2C3.TabStop = false;
+            // 
+            // ptbJ2C4
+            // 
+            this.ptbJ2C4.Image = global::La_Pomme.Properties.Resources.dos;
+            this.ptbJ2C4.Location = new System.Drawing.Point(246, 3);
+            this.ptbJ2C4.Name = "ptbJ2C4";
+            this.ptbJ2C4.Size = new System.Drawing.Size(75, 99);
+            this.ptbJ2C4.TabIndex = 3;
+            this.ptbJ2C4.TabStop = false;
+            // 
+            // ptbJ2C5
+            // 
+            this.ptbJ2C5.Image = global::La_Pomme.Properties.Resources.dos;
+            this.ptbJ2C5.Location = new System.Drawing.Point(327, 3);
+            this.ptbJ2C5.Name = "ptbJ2C5";
+            this.ptbJ2C5.Size = new System.Drawing.Size(75, 99);
+            this.ptbJ2C5.TabIndex = 4;
+            this.ptbJ2C5.TabStop = false;
+            // 
+            // ptbJ2C6
+            // 
+            this.ptbJ2C6.Image = global::La_Pomme.Properties.Resources.dos;
+            this.ptbJ2C6.Location = new System.Drawing.Point(408, 3);
+            this.ptbJ2C6.Name = "ptbJ2C6";
+            this.ptbJ2C6.Size = new System.Drawing.Size(75, 99);
+            this.ptbJ2C6.TabIndex = 6;
+            this.ptbJ2C6.TabStop = false;
+            // 
+            // ptbJ2C7
+            // 
+            this.ptbJ2C7.Image = global::La_Pomme.Properties.Resources.dos;
+            this.ptbJ2C7.Location = new System.Drawing.Point(489, 3);
+            this.ptbJ2C7.Name = "ptbJ2C7";
+            this.ptbJ2C7.Size = new System.Drawing.Size(75, 99);
+            this.ptbJ2C7.TabIndex = 0;
+            this.ptbJ2C7.TabStop = false;
+            // 
+            // ptbJ2C8
+            // 
+            this.ptbJ2C8.Image = global::La_Pomme.Properties.Resources.dos;
+            this.ptbJ2C8.Location = new System.Drawing.Point(570, 3);
+            this.ptbJ2C8.Name = "ptbJ2C8";
+            this.ptbJ2C8.Size = new System.Drawing.Size(75, 99);
+            this.ptbJ2C8.TabIndex = 7;
+            this.ptbJ2C8.TabStop = false;
+            // 
+            // ptbJ2C9
+            // 
+            this.ptbJ2C9.Image = global::La_Pomme.Properties.Resources.dos;
+            this.ptbJ2C9.Location = new System.Drawing.Point(651, 3);
+            this.ptbJ2C9.Name = "ptbJ2C9";
+            this.ptbJ2C9.Size = new System.Drawing.Size(75, 99);
+            this.ptbJ2C9.TabIndex = 9;
+            this.ptbJ2C9.TabStop = false;
+            // 
             // lblPioche
             // 
             this.lblPioche.AutoSize = true;
-            this.lblPioche.Location = new System.Drawing.Point(679, 159);
+            this.lblPioche.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPioche.ForeColor = System.Drawing.Color.White;
+            this.lblPioche.Location = new System.Drawing.Point(675, 222);
             this.lblPioche.Name = "lblPioche";
-            this.lblPioche.Size = new System.Drawing.Size(40, 13);
+            this.lblPioche.Size = new System.Drawing.Size(50, 16);
             this.lblPioche.TabIndex = 12;
             this.lblPioche.Text = "Pioche";
             // 
             // lblAtout
             // 
             this.lblAtout.AutoSize = true;
-            this.lblAtout.Location = new System.Drawing.Point(522, 159);
+            this.lblAtout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAtout.ForeColor = System.Drawing.Color.White;
+            this.lblAtout.Location = new System.Drawing.Point(518, 222);
             this.lblAtout.Name = "lblAtout";
-            this.lblAtout.Size = new System.Drawing.Size(32, 13);
+            this.lblAtout.Size = new System.Drawing.Size(38, 16);
             this.lblAtout.TabIndex = 13;
             this.lblAtout.Text = "Atout";
             // 
             // lblPlayer2
             // 
             this.lblPlayer2.AutoSize = true;
-            this.lblPlayer2.Location = new System.Drawing.Point(12, 126);
+            this.lblPlayer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayer2.ForeColor = System.Drawing.Color.White;
+            this.lblPlayer2.Location = new System.Drawing.Point(12, 122);
             this.lblPlayer2.Name = "lblPlayer2";
-            this.lblPlayer2.Size = new System.Drawing.Size(35, 13);
+            this.lblPlayer2.Size = new System.Drawing.Size(45, 16);
             this.lblPlayer2.TabIndex = 14;
             this.lblPlayer2.Text = "label1";
             // 
             // lblPlayer1
             // 
             this.lblPlayer1.AutoSize = true;
-            this.lblPlayer1.Location = new System.Drawing.Point(12, 315);
+            this.lblPlayer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayer1.ForeColor = System.Drawing.Color.White;
+            this.lblPlayer1.Location = new System.Drawing.Point(12, 431);
             this.lblPlayer1.Name = "lblPlayer1";
-            this.lblPlayer1.Size = new System.Drawing.Size(35, 13);
+            this.lblPlayer1.Size = new System.Drawing.Size(45, 16);
             this.lblPlayer1.TabIndex = 15;
             this.lblPlayer1.Text = "label1";
             // 
-            // pictureBox20
+            // lblCartesGagneesJ1
             // 
-            this.pictureBox20.Image = global::La_Pomme.Properties.Resources.dos1;
-            this.pictureBox20.Location = new System.Drawing.Point(663, 175);
-            this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(75, 99);
-            this.pictureBox20.TabIndex = 11;
-            this.pictureBox20.TabStop = false;
+            this.lblCartesGagneesJ1.AutoSize = true;
+            this.lblCartesGagneesJ1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCartesGagneesJ1.ForeColor = System.Drawing.Color.White;
+            this.lblCartesGagneesJ1.Location = new System.Drawing.Point(799, 454);
+            this.lblCartesGagneesJ1.Name = "lblCartesGagneesJ1";
+            this.lblCartesGagneesJ1.Size = new System.Drawing.Size(120, 16);
+            this.lblCartesGagneesJ1.TabIndex = 17;
+            this.lblCartesGagneesJ1.Text = "Cartes gagnées : 0";
             // 
-            // pictureBox6
+            // lblCartesGagneesJ2
             // 
-            this.pictureBox6.Image = global::La_Pomme.Properties.Resources._6c;
-            this.pictureBox6.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(75, 99);
-            this.pictureBox6.TabIndex = 5;
-            this.pictureBox6.TabStop = false;
+            this.lblCartesGagneesJ2.AutoSize = true;
+            this.lblCartesGagneesJ2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCartesGagneesJ2.ForeColor = System.Drawing.Color.White;
+            this.lblCartesGagneesJ2.Location = new System.Drawing.Point(799, 15);
+            this.lblCartesGagneesJ2.Name = "lblCartesGagneesJ2";
+            this.lblCartesGagneesJ2.Size = new System.Drawing.Size(120, 16);
+            this.lblCartesGagneesJ2.TabIndex = 18;
+            this.lblCartesGagneesJ2.Text = "Cartes gagnées : 0";
             // 
-            // pictureBox2
+            // ptbScoreJ2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(84, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(75, 99);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.ptbScoreJ2.Image = ((System.Drawing.Image)(resources.GetObject("ptbScoreJ2.Image")));
+            this.ptbScoreJ2.Location = new System.Drawing.Point(925, 12);
+            this.ptbScoreJ2.Name = "ptbScoreJ2";
+            this.ptbScoreJ2.Size = new System.Drawing.Size(75, 99);
+            this.ptbScoreJ2.TabIndex = 16;
+            this.ptbScoreJ2.TabStop = false;
             // 
-            // pictureBox3
+            // ptbPioche
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(165, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(75, 99);
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
+            this.ptbPioche.Image = ((System.Drawing.Image)(resources.GetObject("ptbPioche.Image")));
+            this.ptbPioche.Location = new System.Drawing.Point(663, 241);
+            this.ptbPioche.Name = "ptbPioche";
+            this.ptbPioche.Size = new System.Drawing.Size(75, 99);
+            this.ptbPioche.TabIndex = 11;
+            this.ptbPioche.TabStop = false;
             // 
-            // pictureBox4
+            // ptbAtout
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(246, 3);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(75, 99);
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
+            this.ptbAtout.Image = ((System.Drawing.Image)(resources.GetObject("ptbAtout.Image")));
+            this.ptbAtout.Location = new System.Drawing.Point(501, 241);
+            this.ptbAtout.Name = "ptbAtout";
+            this.ptbAtout.Size = new System.Drawing.Size(75, 99);
+            this.ptbAtout.TabIndex = 10;
+            this.ptbAtout.TabStop = false;
             // 
-            // pictureBox5
+            // ptbScoreJ1
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(327, 3);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(75, 99);
-            this.pictureBox5.TabIndex = 4;
-            this.pictureBox5.TabStop = false;
+            this.ptbScoreJ1.Image = ((System.Drawing.Image)(resources.GetObject("ptbScoreJ1.Image")));
+            this.ptbScoreJ1.Location = new System.Drawing.Point(925, 450);
+            this.ptbScoreJ1.Name = "ptbScoreJ1";
+            this.ptbScoreJ1.Size = new System.Drawing.Size(75, 99);
+            this.ptbScoreJ1.TabIndex = 10;
+            this.ptbScoreJ1.TabStop = false;
             // 
-            // pictureBox7
+            // lblScoreJ1
             // 
-            this.pictureBox7.Location = new System.Drawing.Point(408, 3);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(75, 99);
-            this.pictureBox7.TabIndex = 6;
-            this.pictureBox7.TabStop = false;
+            this.lblScoreJ1.AutoSize = true;
+            this.lblScoreJ1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScoreJ1.ForeColor = System.Drawing.Color.White;
+            this.lblScoreJ1.Location = new System.Drawing.Point(799, 485);
+            this.lblScoreJ1.Name = "lblScoreJ1";
+            this.lblScoreJ1.Size = new System.Drawing.Size(89, 16);
+            this.lblScoreJ1.TabIndex = 19;
+            this.lblScoreJ1.Text = "Score : 0 pt(s)";
             // 
-            // pictureBox1
+            // lblScoreJ2
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(489, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(75, 99);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.lblScoreJ2.AutoSize = true;
+            this.lblScoreJ2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScoreJ2.ForeColor = System.Drawing.Color.White;
+            this.lblScoreJ2.Location = new System.Drawing.Point(799, 48);
+            this.lblScoreJ2.Name = "lblScoreJ2";
+            this.lblScoreJ2.Size = new System.Drawing.Size(89, 16);
+            this.lblScoreJ2.TabIndex = 20;
+            this.lblScoreJ2.Text = "Score : 0 pt(s)";
             // 
-            // pictureBox8
+            // pictureBox23
             // 
-            this.pictureBox8.Location = new System.Drawing.Point(570, 3);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(75, 99);
-            this.pictureBox8.TabIndex = 7;
-            this.pictureBox8.TabStop = false;
+            this.pictureBox23.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox23.Image")));
+            this.pictureBox23.Location = new System.Drawing.Point(215, 159);
+            this.pictureBox23.Name = "pictureBox23";
+            this.pictureBox23.Size = new System.Drawing.Size(75, 99);
+            this.pictureBox23.TabIndex = 21;
+            this.pictureBox23.TabStop = false;
             // 
-            // pictureBox9
+            // pictureBox24
             // 
-            this.pictureBox9.Location = new System.Drawing.Point(651, 3);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(75, 99);
-            this.pictureBox9.TabIndex = 9;
-            this.pictureBox9.TabStop = false;
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = global::La_Pomme.Properties.Resources.dos1;
-            this.pictureBox10.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(75, 99);
-            this.pictureBox10.TabIndex = 5;
-            this.pictureBox10.TabStop = false;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Location = new System.Drawing.Point(84, 3);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(75, 99);
-            this.pictureBox11.TabIndex = 1;
-            this.pictureBox11.TabStop = false;
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.Location = new System.Drawing.Point(165, 3);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(75, 99);
-            this.pictureBox12.TabIndex = 2;
-            this.pictureBox12.TabStop = false;
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Location = new System.Drawing.Point(246, 3);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(75, 99);
-            this.pictureBox13.TabIndex = 3;
-            this.pictureBox13.TabStop = false;
-            // 
-            // pictureBox14
-            // 
-            this.pictureBox14.Location = new System.Drawing.Point(327, 3);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(75, 99);
-            this.pictureBox14.TabIndex = 4;
-            this.pictureBox14.TabStop = false;
-            // 
-            // pictureBox15
-            // 
-            this.pictureBox15.Location = new System.Drawing.Point(408, 3);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(75, 99);
-            this.pictureBox15.TabIndex = 6;
-            this.pictureBox15.TabStop = false;
-            // 
-            // pictureBox16
-            // 
-            this.pictureBox16.Location = new System.Drawing.Point(489, 3);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(75, 99);
-            this.pictureBox16.TabIndex = 0;
-            this.pictureBox16.TabStop = false;
-            // 
-            // pictureBox17
-            // 
-            this.pictureBox17.Location = new System.Drawing.Point(570, 3);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(75, 99);
-            this.pictureBox17.TabIndex = 7;
-            this.pictureBox17.TabStop = false;
-            // 
-            // pictureBox18
-            // 
-            this.pictureBox18.Location = new System.Drawing.Point(651, 3);
-            this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(75, 99);
-            this.pictureBox18.TabIndex = 9;
-            this.pictureBox18.TabStop = false;
-            // 
-            // pictureBox19
-            // 
-            this.pictureBox19.Image = global::La_Pomme.Properties.Resources._6d;
-            this.pictureBox19.Location = new System.Drawing.Point(501, 175);
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(75, 99);
-            this.pictureBox19.TabIndex = 10;
-            this.pictureBox19.TabStop = false;
-            // 
-            // pictureBox21
-            // 
-            this.pictureBox21.Image = global::La_Pomme.Properties.Resources.dos1;
-            this.pictureBox21.Location = new System.Drawing.Point(925, 334);
-            this.pictureBox21.Name = "pictureBox21";
-            this.pictureBox21.Size = new System.Drawing.Size(75, 99);
-            this.pictureBox21.TabIndex = 10;
-            this.pictureBox21.TabStop = false;
-            // 
-            // pictureBox22
-            // 
-            this.pictureBox22.Image = global::La_Pomme.Properties.Resources.dos1;
-            this.pictureBox22.Location = new System.Drawing.Point(925, 12);
-            this.pictureBox22.Name = "pictureBox22";
-            this.pictureBox22.Size = new System.Drawing.Size(75, 99);
-            this.pictureBox22.TabIndex = 16;
-            this.pictureBox22.TabStop = false;
+            this.pictureBox24.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox24.Image")));
+            this.pictureBox24.Location = new System.Drawing.Point(215, 309);
+            this.pictureBox24.Name = "pictureBox24";
+            this.pictureBox24.Size = new System.Drawing.Size(75, 99);
+            this.pictureBox24.TabIndex = 22;
+            this.pictureBox24.TabStop = false;
             // 
             // frmLaPomme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1012, 450);
-            this.Controls.Add(this.pictureBox22);
+            this.BackColor = System.Drawing.Color.SeaGreen;
+            this.ClientSize = new System.Drawing.Size(1012, 561);
+            this.Controls.Add(this.pictureBox24);
+            this.Controls.Add(this.pictureBox23);
+            this.Controls.Add(this.lblScoreJ2);
+            this.Controls.Add(this.lblScoreJ1);
+            this.Controls.Add(this.lblCartesGagneesJ2);
+            this.Controls.Add(this.lblCartesGagneesJ1);
+            this.Controls.Add(this.ptbScoreJ2);
             this.Controls.Add(this.lblPlayer1);
             this.Controls.Add(this.lblPlayer2);
             this.Controls.Add(this.lblAtout);
             this.Controls.Add(this.lblPioche);
-            this.Controls.Add(this.pictureBox20);
+            this.Controls.Add(this.ptbPioche);
             this.Controls.Add(this.flpPlayer1Deck);
             this.Controls.Add(this.flpPlayer2Deck);
-            this.Controls.Add(this.pictureBox19);
-            this.Controls.Add(this.pictureBox21);
+            this.Controls.Add(this.ptbAtout);
+            this.Controls.Add(this.ptbScoreJ1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmLaPomme";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "La Pomme";
             this.Load += new System.EventHandler(this.frmLaPomme_Load);
             this.flpPlayer1Deck.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1C9)).EndInit();
             this.flpPlayer2Deck.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbScoreJ2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPioche)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAtout)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbScoreJ1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -381,34 +489,40 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox ptbJ1C7;
+        private System.Windows.Forms.PictureBox ptbJ1C2;
+        private System.Windows.Forms.PictureBox ptbJ1C3;
+        private System.Windows.Forms.PictureBox ptbJ1C4;
+        private System.Windows.Forms.PictureBox ptbJ1C5;
+        private System.Windows.Forms.PictureBox ptbJ1C1;
+        private System.Windows.Forms.PictureBox ptbJ1C6;
+        private System.Windows.Forms.PictureBox ptbJ1C8;
         private System.Windows.Forms.FlowLayoutPanel flpPlayer1Deck;
-        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox ptbJ1C9;
         private System.Windows.Forms.FlowLayoutPanel flpPlayer2Deck;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.PictureBox pictureBox14;
-        private System.Windows.Forms.PictureBox pictureBox15;
-        private System.Windows.Forms.PictureBox pictureBox16;
-        private System.Windows.Forms.PictureBox pictureBox17;
-        private System.Windows.Forms.PictureBox pictureBox18;
-        private System.Windows.Forms.PictureBox pictureBox19;
-        private System.Windows.Forms.PictureBox pictureBox20;
+        private System.Windows.Forms.PictureBox ptbJ2C1;
+        private System.Windows.Forms.PictureBox ptbJ2C2;
+        private System.Windows.Forms.PictureBox ptbJ2C3;
+        private System.Windows.Forms.PictureBox ptbJ2C4;
+        private System.Windows.Forms.PictureBox ptbJ2C5;
+        private System.Windows.Forms.PictureBox ptbJ2C6;
+        private System.Windows.Forms.PictureBox ptbJ2C7;
+        private System.Windows.Forms.PictureBox ptbJ2C8;
+        private System.Windows.Forms.PictureBox ptbJ2C9;
+        private System.Windows.Forms.PictureBox ptbAtout;
+        private System.Windows.Forms.PictureBox ptbPioche;
         private System.Windows.Forms.Label lblPioche;
         private System.Windows.Forms.Label lblAtout;
         private System.Windows.Forms.Label lblPlayer2;
         private System.Windows.Forms.Label lblPlayer1;
-        private System.Windows.Forms.PictureBox pictureBox21;
-        private System.Windows.Forms.PictureBox pictureBox22;
+        private System.Windows.Forms.PictureBox ptbScoreJ1;
+        private System.Windows.Forms.PictureBox ptbScoreJ2;
+        private System.Windows.Forms.Label lblCartesGagneesJ1;
+        private System.Windows.Forms.Label lblCartesGagneesJ2;
+        private System.Windows.Forms.Label lblScoreJ1;
+        private System.Windows.Forms.Label lblScoreJ2;
+        private System.Windows.Forms.PictureBox pictureBox23;
+        private System.Windows.Forms.PictureBox pictureBox24;
     }
 }
 
