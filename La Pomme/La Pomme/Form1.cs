@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
+
 namespace La_Pomme
 {
     public partial class frmLaPomme : Form
@@ -33,33 +34,32 @@ namespace La_Pomme
 
             lblPlayer1.Text = playerNames[0]; // Player 1 name
             lblPlayer2.Text = playerNames[1]; // Player 2 name
-
+            
             string filePath = @"cards.csv";
             StreamReader streamReader = new StreamReader(filePath);
 
             //Pour ne pas traiter l'entête
             streamReader.ReadLine();
 
-            int id = 0; // To set the card id
-
             while (!streamReader.EndOfStream)
             {
                 string[] line = streamReader.ReadLine().Split(';');
-                Card card = new Card(id, line[0], line[1], int.Parse(line[2]), int.Parse(line[3]), int.Parse(line[4]), line[5]);
+                Card card = new Card(line[0], line[1], int.Parse(line[2]), int.Parse(line[3]), int.Parse(line[4]), line[5]);
 
                 cards.Add(card);
-                id++;
             }
 
             Shuffle(cards); // Call the shuffle function
+            
+            ptbAtout.ImageLocation = cards[0].GetImage(); // Set the asset card for the rest of the game
+            cards.RemoveAt(0); // Remove the card from the main deck
 
             // Insert 9 cards to the player 1 deck
-            for(int i = 0; i <= 8; i++)
+            for (int i = 0; i <= 8; i++)
             {
-                PictureBox picture = new PictureBox();               
-                picture.ImageLocation = @cards[i].GetImage();
-                picture.Size = new Size(75, 99);
-                flpPlayer1Deck.Controls.Add(picture);
+                cards[i].ImageLocation = @cards[i].GetImage();
+                cards[i].Size = new Size(75, 99);
+                flpPlayer1Deck.Controls.Add(cards[i]);
             }
 
             // Remove the cards from the main deck and put them to the player 1 deck
@@ -72,11 +72,9 @@ namespace La_Pomme
             // Insert 9 cards to the player 2 deck
             for (int i = 9; i <= 17; i++)
             {
-                PictureBox picture = new PictureBox();
-                picture.Name = cards[i].GetId().ToString();
-                picture.ImageLocation = @"dos.gif"; // The player 2 deck is hided
-                picture.Size = new Size(75, 99);
-                flpPlayer2Deck.Controls.Add(picture);
+                cards[i].ImageLocation = @"dos.png"; // The player 2 deck is hided
+                cards[i].Size = new Size(75, 99);
+                flpPlayer2Deck.Controls.Add(cards[i]);
             }
 
             // Remove the cards from the main deck and put them to the player 2 deck

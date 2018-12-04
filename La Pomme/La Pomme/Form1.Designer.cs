@@ -29,15 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLaPomme));
-            this.ptbJ2C1 = new System.Windows.Forms.PictureBox();
-            this.ptbJ2C2 = new System.Windows.Forms.PictureBox();
-            this.ptbJ2C3 = new System.Windows.Forms.PictureBox();
-            this.ptbJ2C4 = new System.Windows.Forms.PictureBox();
-            this.ptbJ2C5 = new System.Windows.Forms.PictureBox();
-            this.ptbJ2C6 = new System.Windows.Forms.PictureBox();
-            this.ptbJ2C7 = new System.Windows.Forms.PictureBox();
-            this.ptbJ2C8 = new System.Windows.Forms.PictureBox();
-            this.ptbJ2C9 = new System.Windows.Forms.PictureBox();
             this.lblPioche = new System.Windows.Forms.Label();
             this.lblAtout = new System.Windows.Forms.Label();
             this.lblPlayer2 = new System.Windows.Forms.Label();
@@ -54,104 +45,13 @@
             this.ptbJ1PlayedCard = new System.Windows.Forms.PictureBox();
             this.flpPlayer2Deck = new System.Windows.Forms.FlowLayoutPanel();
             this.flpPlayer1Deck = new System.Windows.Forms.FlowLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbScoreJ2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPioche)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAtout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbScoreJ1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbJ2PlayedCard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbJ1PlayedCard)).BeginInit();
-            this.flpPlayer2Deck.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // ptbJ2C1
-            // 
-            this.ptbJ2C1.Image = ((System.Drawing.Image)(resources.GetObject("ptbJ2C1.Image")));
-            this.ptbJ2C1.Location = new System.Drawing.Point(3, 3);
-            this.ptbJ2C1.Name = "ptbJ2C1";
-            this.ptbJ2C1.Size = new System.Drawing.Size(75, 99);
-            this.ptbJ2C1.TabIndex = 5;
-            this.ptbJ2C1.TabStop = false;
-            // 
-            // ptbJ2C2
-            // 
-            this.ptbJ2C2.Image = global::La_Pomme.Properties.Resources.dos;
-            this.ptbJ2C2.Location = new System.Drawing.Point(84, 3);
-            this.ptbJ2C2.Name = "ptbJ2C2";
-            this.ptbJ2C2.Size = new System.Drawing.Size(75, 99);
-            this.ptbJ2C2.TabIndex = 1;
-            this.ptbJ2C2.TabStop = false;
-            // 
-            // ptbJ2C3
-            // 
-            this.ptbJ2C3.Image = global::La_Pomme.Properties.Resources.dos;
-            this.ptbJ2C3.Location = new System.Drawing.Point(165, 3);
-            this.ptbJ2C3.Name = "ptbJ2C3";
-            this.ptbJ2C3.Size = new System.Drawing.Size(75, 99);
-            this.ptbJ2C3.TabIndex = 2;
-            this.ptbJ2C3.TabStop = false;
-            // 
-            // ptbJ2C4
-            // 
-            this.ptbJ2C4.Image = global::La_Pomme.Properties.Resources.dos;
-            this.ptbJ2C4.Location = new System.Drawing.Point(246, 3);
-            this.ptbJ2C4.Name = "ptbJ2C4";
-            this.ptbJ2C4.Size = new System.Drawing.Size(75, 99);
-            this.ptbJ2C4.TabIndex = 3;
-            this.ptbJ2C4.TabStop = false;
-            // 
-            // ptbJ2C5
-            // 
-            this.ptbJ2C5.Image = global::La_Pomme.Properties.Resources.dos;
-            this.ptbJ2C5.Location = new System.Drawing.Point(327, 3);
-            this.ptbJ2C5.Name = "ptbJ2C5";
-            this.ptbJ2C5.Size = new System.Drawing.Size(75, 99);
-            this.ptbJ2C5.TabIndex = 4;
-            this.ptbJ2C5.TabStop = false;
-            // 
-            // ptbJ2C6
-            // 
-            this.ptbJ2C6.Image = global::La_Pomme.Properties.Resources.dos;
-            this.ptbJ2C6.Location = new System.Drawing.Point(408, 3);
-            this.ptbJ2C6.Name = "ptbJ2C6";
-            this.ptbJ2C6.Size = new System.Drawing.Size(75, 99);
-            this.ptbJ2C6.TabIndex = 6;
-            this.ptbJ2C6.TabStop = false;
-            // 
-            // ptbJ2C7
-            // 
-            this.ptbJ2C7.Image = global::La_Pomme.Properties.Resources.dos;
-            this.ptbJ2C7.Location = new System.Drawing.Point(489, 3);
-            this.ptbJ2C7.Name = "ptbJ2C7";
-            this.ptbJ2C7.Size = new System.Drawing.Size(75, 99);
-            this.ptbJ2C7.TabIndex = 0;
-            this.ptbJ2C7.TabStop = false;
-            // 
-            // ptbJ2C8
-            // 
-            this.ptbJ2C8.Image = global::La_Pomme.Properties.Resources.dos;
-            this.ptbJ2C8.Location = new System.Drawing.Point(570, 3);
-            this.ptbJ2C8.Name = "ptbJ2C8";
-            this.ptbJ2C8.Size = new System.Drawing.Size(75, 99);
-            this.ptbJ2C8.TabIndex = 7;
-            this.ptbJ2C8.TabStop = false;
-            // 
-            // ptbJ2C9
-            // 
-            this.ptbJ2C9.Image = global::La_Pomme.Properties.Resources.dos;
-            this.ptbJ2C9.Location = new System.Drawing.Point(651, 3);
-            this.ptbJ2C9.Name = "ptbJ2C9";
-            this.ptbJ2C9.Size = new System.Drawing.Size(75, 99);
-            this.ptbJ2C9.TabIndex = 9;
-            this.ptbJ2C9.TabStop = false;
             // 
             // lblPioche
             // 
@@ -279,7 +179,7 @@
             // 
             // ptbJ2PlayedCard
             // 
-            this.ptbJ2PlayedCard.Image = ((System.Drawing.Image)(resources.GetObject("ptbJ2PlayedCard.Image")));
+            this.ptbJ2PlayedCard.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ptbJ2PlayedCard.Location = new System.Drawing.Point(215, 159);
             this.ptbJ2PlayedCard.Name = "ptbJ2PlayedCard";
             this.ptbJ2PlayedCard.Size = new System.Drawing.Size(75, 99);
@@ -288,7 +188,7 @@
             // 
             // ptbJ1PlayedCard
             // 
-            this.ptbJ1PlayedCard.Image = ((System.Drawing.Image)(resources.GetObject("ptbJ1PlayedCard.Image")));
+            this.ptbJ1PlayedCard.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ptbJ1PlayedCard.Location = new System.Drawing.Point(215, 309);
             this.ptbJ1PlayedCard.Name = "ptbJ1PlayedCard";
             this.ptbJ1PlayedCard.Size = new System.Drawing.Size(75, 99);
@@ -297,15 +197,6 @@
             // 
             // flpPlayer2Deck
             // 
-            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C1);
-            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C2);
-            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C3);
-            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C4);
-            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C5);
-            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C6);
-            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C7);
-            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C8);
-            this.flpPlayer2Deck.Controls.Add(this.ptbJ2C9);
             this.flpPlayer2Deck.Location = new System.Drawing.Point(12, 12);
             this.flpPlayer2Deck.Name = "flpPlayer2Deck";
             this.flpPlayer2Deck.Size = new System.Drawing.Size(736, 107);
@@ -347,37 +238,18 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "La Pomme";
             this.Load += new System.EventHandler(this.frmLaPomme_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2C9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbScoreJ2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPioche)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAtout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbScoreJ1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbJ2PlayedCard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbJ1PlayedCard)).EndInit();
-            this.flpPlayer2Deck.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox ptbJ2C1;
-        private System.Windows.Forms.PictureBox ptbJ2C2;
-        private System.Windows.Forms.PictureBox ptbJ2C3;
-        private System.Windows.Forms.PictureBox ptbJ2C4;
-        private System.Windows.Forms.PictureBox ptbJ2C5;
-        private System.Windows.Forms.PictureBox ptbJ2C6;
-        private System.Windows.Forms.PictureBox ptbJ2C7;
-        private System.Windows.Forms.PictureBox ptbJ2C8;
-        private System.Windows.Forms.PictureBox ptbJ2C9;
         private System.Windows.Forms.PictureBox ptbAtout;
         private System.Windows.Forms.PictureBox ptbPioche;
         private System.Windows.Forms.Label lblPioche;
