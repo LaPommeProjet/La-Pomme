@@ -231,7 +231,7 @@
             this.Controls.Add(this.flpPlayer2Deck);
             this.Controls.Add(this.ptbAtout);
             this.Controls.Add(this.ptbScoreJ1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmLaPomme";

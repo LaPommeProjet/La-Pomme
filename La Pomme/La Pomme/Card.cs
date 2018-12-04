@@ -15,6 +15,7 @@ namespace La_Pomme
         private int pointsWithoutAsset;
         private int pointsWithAsset;
         private string image;
+        private int player;
 
         /// <summary>
         /// Constructor
@@ -39,8 +40,9 @@ namespace La_Pomme
 
         private void CardClickEvent(object sender, MouseEventArgs e)
         {
+            PlayCard(player);
             Console.WriteLine(type + " " + name + " Clicked");
-        }
+        }   
 
         /// <summary>
         /// Gets the value of the card
@@ -52,7 +54,7 @@ namespace La_Pomme
         }
 
         /// <summary>
-        /// G
+        /// Get the image URL of the card
         /// </summary>
         /// <returns></returns>
         public string GetImage()
@@ -60,14 +62,31 @@ namespace La_Pomme
             return image;
         }
 
+        /// <summary>
+        /// Get the name of the card
+        /// </summary>
+        /// <returns></returns>
         public string GetName()
         {
             return name;
         }
 
+        /// <summary>
+        /// Get the type of the card
+        /// </summary>
+        /// <returns></returns>
         public string GetCardType()
         {
             return type;
+        }
+
+        /// <summary>
+        /// Set the player that has the card
+        /// </summary>
+        /// <param name="playerName"></param>
+        public void SetPlayerCard(int player)
+        {
+            this.player = player;
         }
     }
 }

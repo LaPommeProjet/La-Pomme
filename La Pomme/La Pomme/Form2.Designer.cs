@@ -95,13 +95,12 @@
             this.Controls.Add(this.txtPlayer1);
             this.Controls.Add(this.lblPlayer2);
             this.Controls.Add(this.lblPlayer1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Choix du nom des joueurs";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.form2_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

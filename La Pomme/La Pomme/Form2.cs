@@ -58,16 +58,5 @@ namespace La_Pomme
 
             return playerNames;
         }
-
-        /// <summary>
-        /// Set the default names of the players when the form is closed
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void form2_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            player1Name = "Joueur 1";
-            player2Name = "Joueur 2";
-        }
     }
 }
