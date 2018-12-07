@@ -44,7 +44,7 @@ namespace La_Pomme
             while (!streamReader.EndOfStream)
             {
                 string[] line = streamReader.ReadLine().Split(';');
-                Card card = new Card(line[0], line[1], int.Parse(line[2]), int.Parse(line[3]), int.Parse(line[4]), line[5]);
+                Card card = new Card(line[0], line[1], int.Parse(line[2]), int.Parse(line[3]), int.Parse(line[4]), line[5]); // Création de la carte
 
                 cards.Add(card);
             }
@@ -59,6 +59,7 @@ namespace La_Pomme
             {
                 cards[i].ImageLocation = @cards[i].GetImage();
                 cards[i].Size = new Size(75, 99);
+                cards[i].SetPlayerCard(1);
                 flpPlayer1Deck.Controls.Add(cards[i]);
             }
 
@@ -72,8 +73,9 @@ namespace La_Pomme
             // Insert 9 cards to the player 2 deck
             for (int i = 9; i <= 17; i++)
             {
-                cards[i].ImageLocation = @"dos.png"; // The player 2 deck is hided
+                cards[i].ImageLocation = @cards[i].GetImage();
                 cards[i].Size = new Size(75, 99);
+                cards[i].SetPlayerCard(2);
                 flpPlayer2Deck.Controls.Add(cards[i]);
             }
 
@@ -102,6 +104,11 @@ namespace La_Pomme
                 list[randomIndex] = list[listLength];
                 list[listLength] = value;
             }
+        }
+
+        public void PlayCard(int player)
+        {
+
         }
     }
 }
