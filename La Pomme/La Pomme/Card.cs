@@ -51,7 +51,7 @@ namespace La_Pomme
         /// Gets the value of the card
         /// </summary>
         /// <returns></returns>
-        public int GetValue()
+        public int GetCardValue()
         {
             return value;
         }
@@ -90,6 +90,16 @@ namespace La_Pomme
         public void SetPlayerCard(int player)
         {
             this.player = player;
+        }
+
+        public int GetPointsWithoutAsset()
+        {
+            return pointsWithoutAsset;
+        }
+
+        public int GetPointsWithAsset()
+        {
+            return pointsWithAsset;
         }
     }
 }
