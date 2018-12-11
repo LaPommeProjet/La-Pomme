@@ -20,7 +20,8 @@ namespace La_Pomme
         List<Card> player1Deck = new List<Card>(); // Instanciate the deck of the player 1
         List<Card> player2Deck = new List<Card>(); // Instanciate the deck of the player 2
         private Random random;
-        private int playerTurn = 1;
+        private int playerTurn = 1; // Used to store the player turn
+        private int nbPlayedCards = 0; // Used to store the number of the played cards
 
         public frmLaPomme()
         {
@@ -92,6 +93,7 @@ namespace La_Pomme
                 cards.RemoveAt(i);
             }
 
+            lblPlayer1.ForeColor = Color.Crimson;
             flpPlayer2Deck.Enabled = false; // Disable the player 2 deck because it's the player's 1 turn 
         }
 
@@ -120,7 +122,7 @@ namespace La_Pomme
         /// <param name="player"></param>
         /// <param name="cardId"></param>
         public void PlayCard(int player, int cardId)
-        {
+        {           
             if (playerTurn == 2)
             {
                 foreach(Card card in player2Deck)
@@ -128,16 +130,9 @@ namespace La_Pomme
                     if(card.GetId() == cardId)
                     {
                         flpJ2PlayedCard.Controls.Add(card);
-                        flpPlayer2Deck.Controls.Remove(card);
+                        flpPlayer2Deck.Controls.Remove(card);  
                     }
-                }
-
-                playerTurn = 1;
-
-                flpPlayer2Deck.Enabled = false;
-                flpPlayer1Deck.Enabled = true;
-
-                CardBattle(); // Calls the card battle function when the second player played
+                }               
             }
             else
             {
@@ -149,11 +144,16 @@ namespace La_Pomme
                         flpPlayer1Deck.Controls.Remove(card);
                     }
                 }
+            }
 
-                playerTurn++;
+            nbPlayedCards++;
+            SetPlayerTurn();
 
-                flpPlayer1Deck.Enabled = false;
-                flpPlayer2Deck.Enabled = true;
+            // When the 2 players have played a card
+            if (nbPlayedCards == 2)
+            {
+                CardBattle(); // Calls the card battle function when the second player played
+                nbPlayedCards = 0;
             }
         }
 
@@ -166,8 +166,34 @@ namespace La_Pomme
         {
             PictureBox card = sender as PictureBox;
             int cardId = int.Parse(card.Name);
-            Console.WriteLine("Id de la carte: " + card.Name);
             PlayCard(playerTurn, cardId);
+        }
+
+        /// <summary>
+        /// Shows to the players who can play and who can't
+        /// </summary>
+        public void SetPlayerTurn()
+        {
+            if (playerTurn == 1)
+            {
+                playerTurn = 2;
+                
+                flpPlayer1Deck.Enabled = false;
+                flpPlayer2Deck.Enabled = true;
+
+                lblPlayer1.ForeColor = Color.White;
+                lblPlayer2.ForeColor = Color.Crimson;
+            }
+            else
+            {
+                playerTurn = 1;
+
+                flpPlayer2Deck.Enabled = false;
+                flpPlayer1Deck.Enabled = true;
+
+                lblPlayer1.ForeColor = Color.Crimson;
+                lblPlayer2.ForeColor = Color.White;
+            } 
         }
 
         /// <summary>
@@ -175,7 +201,7 @@ namespace La_Pomme
         /// </summary>
         private void CardBattle()
         {
-
+            
         }
     }
 }
