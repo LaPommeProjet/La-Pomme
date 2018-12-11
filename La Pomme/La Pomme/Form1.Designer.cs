@@ -41,16 +41,14 @@
             this.ptbScoreJ1 = new System.Windows.Forms.PictureBox();
             this.lblScoreJ1 = new System.Windows.Forms.Label();
             this.lblScoreJ2 = new System.Windows.Forms.Label();
-            this.ptbJ2PlayedCard = new System.Windows.Forms.PictureBox();
-            this.ptbJ1PlayedCard = new System.Windows.Forms.PictureBox();
             this.flpPlayer2Deck = new System.Windows.Forms.FlowLayoutPanel();
             this.flpPlayer1Deck = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpJ1PlayedCard = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpJ2PlayedCard = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.ptbScoreJ2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPioche)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAtout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbScoreJ1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2PlayedCard)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1PlayedCard)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPioche
@@ -177,24 +175,6 @@
             this.lblScoreJ2.TabIndex = 20;
             this.lblScoreJ2.Text = "Score : 0 pt(s)";
             // 
-            // ptbJ2PlayedCard
-            // 
-            this.ptbJ2PlayedCard.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ptbJ2PlayedCard.Location = new System.Drawing.Point(215, 159);
-            this.ptbJ2PlayedCard.Name = "ptbJ2PlayedCard";
-            this.ptbJ2PlayedCard.Size = new System.Drawing.Size(75, 99);
-            this.ptbJ2PlayedCard.TabIndex = 21;
-            this.ptbJ2PlayedCard.TabStop = false;
-            // 
-            // ptbJ1PlayedCard
-            // 
-            this.ptbJ1PlayedCard.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ptbJ1PlayedCard.Location = new System.Drawing.Point(215, 309);
-            this.ptbJ1PlayedCard.Name = "ptbJ1PlayedCard";
-            this.ptbJ1PlayedCard.Size = new System.Drawing.Size(75, 99);
-            this.ptbJ1PlayedCard.TabIndex = 22;
-            this.ptbJ1PlayedCard.TabStop = false;
-            // 
             // flpPlayer2Deck
             // 
             this.flpPlayer2Deck.Location = new System.Drawing.Point(12, 12);
@@ -209,14 +189,30 @@
             this.flpPlayer1Deck.Size = new System.Drawing.Size(736, 107);
             this.flpPlayer1Deck.TabIndex = 8;
             // 
+            // flpJ1PlayedCard
+            // 
+            this.flpJ1PlayedCard.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flpJ1PlayedCard.Location = new System.Drawing.Point(215, 306);
+            this.flpJ1PlayedCard.Name = "flpJ1PlayedCard";
+            this.flpJ1PlayedCard.Size = new System.Drawing.Size(84, 105);
+            this.flpJ1PlayedCard.TabIndex = 9;
+            // 
+            // flpJ2PlayedCard
+            // 
+            this.flpJ2PlayedCard.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flpJ2PlayedCard.Location = new System.Drawing.Point(215, 156);
+            this.flpJ2PlayedCard.Name = "flpJ2PlayedCard";
+            this.flpJ2PlayedCard.Size = new System.Drawing.Size(84, 105);
+            this.flpJ2PlayedCard.TabIndex = 10;
+            // 
             // frmLaPomme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaGreen;
             this.ClientSize = new System.Drawing.Size(1012, 561);
-            this.Controls.Add(this.ptbJ1PlayedCard);
-            this.Controls.Add(this.ptbJ2PlayedCard);
+            this.Controls.Add(this.flpJ2PlayedCard);
+            this.Controls.Add(this.flpJ1PlayedCard);
             this.Controls.Add(this.lblScoreJ2);
             this.Controls.Add(this.lblScoreJ1);
             this.Controls.Add(this.lblCartesGagneesJ2);
@@ -242,8 +238,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptbPioche)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAtout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbScoreJ1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ2PlayedCard)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbJ1PlayedCard)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,10 +256,10 @@
         private System.Windows.Forms.Label lblCartesGagneesJ2;
         private System.Windows.Forms.Label lblScoreJ1;
         private System.Windows.Forms.Label lblScoreJ2;
-        private System.Windows.Forms.PictureBox ptbJ2PlayedCard;
-        private System.Windows.Forms.PictureBox ptbJ1PlayedCard;
         private System.Windows.Forms.FlowLayoutPanel flpPlayer2Deck;
         private System.Windows.Forms.FlowLayoutPanel flpPlayer1Deck;
+        private System.Windows.Forms.FlowLayoutPanel flpJ1PlayedCard;
+        private System.Windows.Forms.FlowLayoutPanel flpJ2PlayedCard;
     }
 }
 

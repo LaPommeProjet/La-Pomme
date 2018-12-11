@@ -9,6 +9,7 @@ namespace La_Pomme
 {
     class Card : PictureBox
     {
+        private int id;
         private string type;
         private string name;
         private int value;
@@ -26,23 +27,25 @@ namespace La_Pomme
         /// <param name="pointsWithoutAsset"></param>
         /// <param name="pointsWithAsset"></param>
         /// <param name="image"></param>
-        public Card(string type, string name, int value, int pointsWithoutAsset, int pointsWithAsset, string image)
+        public Card(int id, string type, string name, int value, int pointsWithoutAsset, int pointsWithAsset, string image)
         {
+            this.id = id;
             this.type = type;
             this.name = name;
             this.value = value;
             this.pointsWithoutAsset = pointsWithoutAsset;
             this.pointsWithAsset = pointsWithAsset;
             this.image = image;
+        }  
 
-            this.MouseClick += new MouseEventHandler(CardClickEvent); // Add a clic event on the card
-        }
-
-        private void CardClickEvent(object sender, MouseEventArgs e)
+        /// <summary>
+        /// Gets the id of the card
+        /// </summary>
+        /// <returns></returns>
+        public int GetId()
         {
-            PlayCard(player);
-            Console.WriteLine(type + " " + name + " Clicked");
-        }   
+            return id;
+        }
 
         /// <summary>
         /// Gets the value of the card

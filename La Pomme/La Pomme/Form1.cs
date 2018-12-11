@@ -14,12 +14,13 @@ namespace La_Pomme
 {
     public partial class frmLaPomme : Form
     {
-        string[] playerNames; // Contains the player 1 name (index 0) and the player 2 name (index 1)
+        private string[] playerNames; // Contains the player 1 name (index 0) and the player 2 name (index 1)
         form2 form2 = new form2(); // Instanciate the second form to set the player names
         List<Card> cards = new List<Card>(); // Instanciate the cards list
         List<Card> player1Deck = new List<Card>(); // Instanciate the deck of the player 1
         List<Card> player2Deck = new List<Card>(); // Instanciate the deck of the player 2
         private Random random;
+        private int playerTurn = 1;
 
         public frmLaPomme()
         {
@@ -34,7 +35,7 @@ namespace La_Pomme
 
             lblPlayer1.Text = playerNames[0]; // Player 1 name
             lblPlayer2.Text = playerNames[1]; // Player 2 name
-            
+
             string filePath = @"cards.csv";
             StreamReader streamReader = new StreamReader(filePath);
 
@@ -44,7 +45,8 @@ namespace La_Pomme
             while (!streamReader.EndOfStream)
             {
                 string[] line = streamReader.ReadLine().Split(';');
-                Card card = new Card(line[0], line[1], int.Parse(line[2]), int.Parse(line[3]), int.Parse(line[4]), line[5]); // Création de la carte
+                Card card = new Card(int.Parse(line[0]), line[1], line[2], int.Parse(line[3]), int.Parse(line[4]), int.Parse(line[5]), line[6]); // Création de la carte
+                card.MouseClick += new MouseEventHandler(CardClickEvent); // Add a clic event on the card
 
                 cards.Add(card);
             }
@@ -57,34 +59,40 @@ namespace La_Pomme
             // Insert 9 cards to the player 1 deck
             for (int i = 0; i <= 8; i++)
             {
+                cards[i].Name = cards[i].GetId().ToString();
                 cards[i].ImageLocation = @cards[i].GetImage();
                 cards[i].Size = new Size(75, 99);
                 cards[i].SetPlayerCard(1);
+
+                player1Deck.Add(cards[i]);
                 flpPlayer1Deck.Controls.Add(cards[i]);
             }
 
-            // Remove the cards from the main deck and put them to the player 1 deck
+            // Remove the cards from the main deck
             for(int i = 8; i >= 0; i--)
             {
-                player1Deck.Add(cards[i]);
                 cards.RemoveAt(i);
             }
 
             // Insert 9 cards to the player 2 deck
             for (int i = 9; i <= 17; i++)
             {
+                cards[i].Name = cards[i].GetId().ToString();
                 cards[i].ImageLocation = @cards[i].GetImage();
                 cards[i].Size = new Size(75, 99);
                 cards[i].SetPlayerCard(2);
+
+                player2Deck.Add(cards[i]);
                 flpPlayer2Deck.Controls.Add(cards[i]);
             }
 
-            // Remove the cards from the main deck and put them to the player 2 deck
+            // Remove the cards from the main deck
             for (int i = 17; i >= 9; i--)
             {
-                player2Deck.Add(cards[i]);
                 cards.RemoveAt(i);
             }
+
+            flpPlayer2Deck.Enabled = false; // Disable the player 2 deck because it's the player's 1 turn 
         }
 
         /// <summary>
@@ -106,7 +114,66 @@ namespace La_Pomme
             }
         }
 
-        public void PlayCard(int player)
+        /// <summary>
+        /// Play the selected card
+        /// </summary>
+        /// <param name="player"></param>
+        /// <param name="cardId"></param>
+        public void PlayCard(int player, int cardId)
+        {
+            if (playerTurn == 2)
+            {
+                foreach(Card card in player2Deck)
+                {
+                    if(card.GetId() == cardId)
+                    {
+                        flpJ2PlayedCard.Controls.Add(card);
+                        flpPlayer2Deck.Controls.Remove(card);
+                    }
+                }
+
+                playerTurn = 1;
+
+                flpPlayer2Deck.Enabled = false;
+                flpPlayer1Deck.Enabled = true;
+
+                CardBattle(); // Calls the card battle function when the second player played
+            }
+            else
+            {
+                foreach(Card card in player1Deck)
+                {
+                    if(card.GetId() == cardId)
+                    {
+                        flpJ1PlayedCard.Controls.Add(card);
+                        flpPlayer1Deck.Controls.Remove(card);
+                    }
+                }
+
+                playerTurn++;
+
+                flpPlayer1Deck.Enabled = false;
+                flpPlayer2Deck.Enabled = true;
+            }
+        }
+
+        /// <summary>
+        /// Card click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CardClickEvent(object sender, MouseEventArgs e)
+        {
+            PictureBox card = sender as PictureBox;
+            int cardId = int.Parse(card.Name);
+            Console.WriteLine("Id de la carte: " + card.Name);
+            PlayCard(playerTurn, cardId);
+        }
+
+        /// <summary>
+        /// Test which card is the best and gives points to the player
+        /// </summary>
+        private void CardBattle()
         {
 
         }
