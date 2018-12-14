@@ -54,7 +54,7 @@ namespace La_Pomme
             while (!streamReader.EndOfStream)
             {
                 string[] line = streamReader.ReadLine().Split(';');
-                Card card = new Card(int.Parse(line[0]), line[1], line[2], int.Parse(line[3]), int.Parse(line[4]), int.Parse(line[5]), line[6]); // Création de la carte
+                Card card = new Card(int.Parse(line[0]), line[1], line[2], int.Parse(line[3]), int.Parse(line[4]), int.Parse(line[5]), int.Parse(line[6]), line[7]); // Création de la carte
                 card.MouseClick += new MouseEventHandler(CardClickEvent); // Add a clic event on the card
 
                 cards.Add(card);
@@ -227,7 +227,7 @@ namespace La_Pomme
 
             if(isAssetJ1Card == true && isAssetJ2Card == true)
             {
-                if (j1PlayedCard[0].GetCardValue() > j2PlayedCard[0].GetCardValue())
+                if (j1PlayedCard[0].GetCardValueWithAsset() > j2PlayedCard[0].GetCardValueWithAsset())
                 {
                     nbJ1WonCards += 2;
                     j1Score += j1PlayedCard[0].GetPointsWithAsset() + j2PlayedCard[0].GetPointsWithAsset(); // Stores the total of the won points
@@ -264,7 +264,7 @@ namespace La_Pomme
             {
                 if (j1PlayedCard[0].GetCardType() == j2PlayedCard[0].GetCardType())
                 {
-                    if(j1PlayedCard[0].GetCardValue() > j2PlayedCard[0].GetCardValue())
+                    if(j1PlayedCard[0].GetCardValueWithoutAsset() > j2PlayedCard[0].GetCardValueWithoutAsset())
                     {
                         nbJ1WonCards += 2;
                         j1Score += j1PlayedCard[0].GetPointsWithoutAsset() + j2PlayedCard[0].GetPointsWithoutAsset(); // Stores the total of the won points

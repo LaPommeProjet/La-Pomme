@@ -12,7 +12,8 @@ namespace La_Pomme
         private int id;
         private string type;
         private string name;
-        private int value;
+        private int valueWithAsset;
+        private int valueWithoutAsset;
         private int pointsWithoutAsset;
         private int pointsWithAsset;
         private string image;
@@ -27,12 +28,13 @@ namespace La_Pomme
         /// <param name="pointsWithoutAsset"></param>
         /// <param name="pointsWithAsset"></param>
         /// <param name="image"></param>
-        public Card(int id, string type, string name, int value, int pointsWithoutAsset, int pointsWithAsset, string image)
+        public Card(int id, string type, string name, int valueWithoutAsset, int valueWithAsset, int pointsWithoutAsset, int pointsWithAsset, string image)
         {
             this.id = id;
             this.type = type;
             this.name = name;
-            this.value = value;
+            this.valueWithoutAsset = valueWithoutAsset;
+            this.valueWithAsset = valueWithAsset;
             this.pointsWithoutAsset = pointsWithoutAsset;
             this.pointsWithAsset = pointsWithAsset;
             this.image = image;
@@ -48,12 +50,21 @@ namespace La_Pomme
         }
 
         /// <summary>
-        /// Gets the value of the card
+        /// Gets the value without asset of the card
         /// </summary>
         /// <returns></returns>
-        public int GetCardValue()
+        public int GetCardValueWithoutAsset()
         {
-            return value;
+            return valueWithoutAsset;
+        }
+
+        /// <summary>
+        /// Gets the value with asset of the card
+        /// </summary>
+        /// <returns></returns>
+        public int GetCardValueWithAsset()
+        {
+            return valueWithAsset;
         }
 
         /// <summary>
