@@ -20,6 +20,11 @@ namespace La_Pomme
             InitializeComponent();
         }
 
+        private void Form_PlayerNames_Load(object sender, EventArgs e)
+        {
+            cmdValidate.Cursor = Cursors.Hand;
+        }
+
         /// <summary>
         /// Set the names of the players
         /// </summary>
@@ -57,6 +62,6 @@ namespace La_Pomme
             string[] playerNames = { player1Name, player2Name };
 
             return playerNames;
-        }
+        }       
     }
 }

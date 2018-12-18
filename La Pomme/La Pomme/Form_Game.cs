@@ -60,6 +60,7 @@ namespace La_Pomme
                 string[] line = streamReader.ReadLine().Split(';');
                 Card card = new Card(int.Parse(line[0]), line[1], line[2], int.Parse(line[3]), int.Parse(line[4]), int.Parse(line[5]), int.Parse(line[6]), line[7]); // Création de la carte
                 card.MouseClick += new MouseEventHandler(CardClickEvent); // Add a clic event on the card
+                card.Cursor = Cursors.Hand;
 
                 cards.Add(card);
             }
@@ -133,24 +134,15 @@ namespace La_Pomme
         }
 
         /// <summary>
-        /// Card click event
+        /// Plays the selected card
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void CardClickEvent(object sender, MouseEventArgs e)
         {
-            PictureBox card = sender as PictureBox;
-            int cardId = int.Parse(card.Name);
-            PlayCard(cardId);
-        }
+            PictureBox pictureBox = sender as PictureBox;
+            int cardId = int.Parse(pictureBox.Name);
 
-        /// <summary>
-        /// Play the selected card
-        /// </summary>
-        /// <param name="player"></param>
-        /// <param name="cardId"></param>
-        public void PlayCard(int cardId)
-        {           
             if (playerTurn == 1)
             {
                 foreach (Card card in player1Deck)
@@ -291,7 +283,7 @@ namespace La_Pomme
 
             CheckForIllegalCrossThreadCalls = false; // To make disapear the two cards at the same time
 
-            Task.Delay(5).ContinueWith(t => EndCardBattle()); // Delay before clearing the table
+            Task.Delay(3500).ContinueWith(t => EndCardBattle()); // Delay before clearing the table
         }
 
         public void MakeJ1Score(int score)
@@ -327,9 +319,24 @@ namespace La_Pomme
 
             if(flpPlayer1Deck.Controls.Count == 0 && flpPlayer2Deck.Controls.Count == 0)
             {
-                Form_Win form_Win = new Form_Win();
+                string victoryName = "";
+                string victoryPoints = "";
+                string victoryCards = "";
 
-                form_Win.ShowDialog();
+                if(j1Score > j2Score)
+                {
+                    victoryName = playerNames[0];
+                    victoryPoints = j1Score.ToString();
+                    victoryCards = nbJ1WonCards.ToString();
+                }
+                else
+                {
+                    victoryName = playerNames[1];
+                    victoryPoints = j2Score.ToString();
+                    victoryCards = nbJ2WonCards.ToString();
+                }
+
+                MessageBox.Show("Victoire de " + victoryName + " qui a fait " + victoryPoints + " en collectant " + victoryCards + " cartes!");
             }
             else
             {
