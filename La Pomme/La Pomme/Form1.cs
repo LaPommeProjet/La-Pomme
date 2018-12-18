@@ -19,18 +19,14 @@ namespace La_Pomme
         List<Card> cards = new List<Card>(); // Instanciate the cards list
         List<Card> player1Deck = new List<Card>(); // Instanciate the deck of the player 1
         List<Card> player2Deck = new List<Card>(); // Instanciate the deck of the player 2
-        private Random random;
+        private List<Card> j1PlayedCard = new List<Card>(); // Used to store the played card of the player 1
+        private List<Card> j2PlayedCard = new List<Card>(); // Used to store the played card of the player 2
+        private List<Card> assetCard = new List<Card>(); // Used to store the asset card
+        private int firstPlayer = 1; // Used to store which player is starting
         private int playerTurn = 1; // Used to store the player turn
         private int nbPlayedCards = 0; // Used to store the number of the played cards
-        private int firstPlayer = 1; // Used to store which player is starting
-        private List<Card> j1PlayedCard = new List<Card>();
-        private List<Card> j2PlayedCard = new List<Card>();
-        private List<Card> assetCard = new List<Card>();
-        private int nbJ1WonCards = 0;
-        private int nbJ2WonCards = 0;
-        private int j1Score = 0;
-        private int j2Score = 0;
-
+        private Random random;
+                
         public frmLaPomme()
         {
             InitializeComponent();
@@ -214,6 +210,10 @@ namespace La_Pomme
         {
             bool isAssetJ1Card = false;
             bool isAssetJ2Card = false;
+            int nbJ1WonCards = 0;
+            int nbJ2WonCards = 0;
+            int j1Score = 0;
+            int j2Score = 0;
 
             if (j1PlayedCard[0].GetCardType() == assetCard[0].GetCardType())
             {
@@ -229,36 +229,24 @@ namespace La_Pomme
             {
                 if (j1PlayedCard[0].GetCardValueWithAsset() > j2PlayedCard[0].GetCardValueWithAsset())
                 {
-                    nbJ1WonCards += 2;
                     j1Score += j1PlayedCard[0].GetPointsWithAsset() + j2PlayedCard[0].GetPointsWithAsset(); // Stores the total of the won points
-
-                    lblCartesGagneesJ1.Text = "Cartes gagnées : " + nbJ1WonCards.ToString(); // Shows the player 1 won cards
-                    lblScoreJ1.Text = "Score : " + j1Score.ToString() + " pts"; // Shows the player 1 score
+                    MakeJ1Score(j1Score, nbJ1WonCards); // Make the score of the player
                 }
                 else
                 {
-                    nbJ2WonCards += 2;
                     j2Score += j1PlayedCard[0].GetPointsWithAsset() + j2PlayedCard[0].GetPointsWithAsset(); // Stores the total of the won points
-
-                    lblCartesGagneesJ2.Text = "Cartes gagnées : " + nbJ2WonCards.ToString(); // Shows the player 2 won cards
-                    lblScoreJ2.Text = "Score : " + j2Score.ToString() + " pts"; // Shows the player 2 score
+                    MakeJ2Score(j2Score, nbJ2WonCards); // Make the score of the player
                 }
             }
             else if(isAssetJ1Card == true && isAssetJ2Card == false)
             {
-                nbJ1WonCards += 2;
                 j1Score += j1PlayedCard[0].GetPointsWithAsset() + j2PlayedCard[0].GetPointsWithoutAsset(); // Stores the total of the won points
-
-                lblCartesGagneesJ1.Text = "Cartes gagnées : " + nbJ1WonCards.ToString(); // Shows the player 1 won cards
-                lblScoreJ1.Text = "Score : " + j1Score.ToString() + " pts"; // Shows the player 1 score
+                MakeJ1Score(j1Score, nbJ1WonCards); // Make the score of the player
             }
             else if(isAssetJ1Card == false && isAssetJ2Card == true)
             {
-                nbJ2WonCards += 2;
                 j2Score += j1PlayedCard[0].GetPointsWithoutAsset() + j2PlayedCard[0].GetPointsWithAsset(); // Stores the total of the won points
-
-                lblCartesGagneesJ2.Text = "Cartes gagnées : " + nbJ2WonCards.ToString(); // Shows the player 2 won cards
-                lblScoreJ2.Text = "Score : " + j2Score.ToString() + " pts"; // Shows the player 2 score
+                MakeJ2Score(j2Score, nbJ2WonCards); // Make the score of the player
             }
             else 
             {
@@ -266,46 +254,64 @@ namespace La_Pomme
                 {
                     if(j1PlayedCard[0].GetCardValueWithoutAsset() > j2PlayedCard[0].GetCardValueWithoutAsset())
                     {
-                        nbJ1WonCards += 2;
                         j1Score += j1PlayedCard[0].GetPointsWithoutAsset() + j2PlayedCard[0].GetPointsWithoutAsset(); // Stores the total of the won points
-
-                        lblCartesGagneesJ1.Text = "Cartes gagnées : " + nbJ1WonCards.ToString(); // Shows the player 1 won cards
-                        lblScoreJ1.Text = "Score : " + j1Score.ToString() + " pts"; // Shows the player 1 score
+                        MakeJ1Score(j1Score, nbJ1WonCards); // Make the score of the player
                     }
                     else
                     {
-                        nbJ2WonCards += 2;
                         j2Score += j1PlayedCard[0].GetPointsWithoutAsset() + j2PlayedCard[0].GetPointsWithoutAsset(); // Stores the total of the won points
-
-                        lblCartesGagneesJ2.Text = "Cartes gagnées : " + nbJ2WonCards.ToString(); // Shows the player 2 won cards
-                        lblScoreJ2.Text = "Score : " + j2Score.ToString() + " pts"; // Shows the player 2 score
+                        MakeJ2Score(j2Score, nbJ2WonCards); // Make the score of the player
                     }
                 }
                 else
                 {
                     if(firstPlayer == 1)
                     {
-                        nbJ1WonCards += 2;
                         j1Score += j1PlayedCard[0].GetPointsWithoutAsset() + j2PlayedCard[0].GetPointsWithoutAsset(); // Stores the total of the won points
-
-                        lblCartesGagneesJ1.Text = "Cartes gagnées : " + nbJ1WonCards.ToString(); // Shows the player 1 won cards
-                        lblScoreJ1.Text = "Score : " + j1Score.ToString() + " pts"; // Shows the player 1 score
+                        MakeJ1Score(j1Score, nbJ1WonCards); // Make the score of the player
                     }
                     else
                     {
-                        nbJ2WonCards += 2;
                         j2Score += j1PlayedCard[0].GetPointsWithoutAsset() + j2PlayedCard[0].GetPointsWithoutAsset(); // Stores the total of the won points
-
-                        lblCartesGagneesJ2.Text = "Cartes gagnées : " + nbJ2WonCards.ToString(); // Shows the player 2 won cards
-                        lblScoreJ2.Text = "Score : " + j2Score.ToString() + " pts"; // Shows the player 2 score
+                        MakeJ2Score(j2Score, nbJ2WonCards); // Make the score of the player
                     }
                 }
             }
 
+            CheckForIllegalCrossThreadCalls = false; // To make disapear the two cards at the same time
+
+            Task.Delay(3500).ContinueWith(t => EndCardBattle()); // Delay before clearing the table
+        }
+
+        public void MakeJ1Score(int score, int nbWonCards)
+        {
+            nbWonCards += 2;
+            lblCartesGagneesJ1.Text = "Cartes gagnées : " + nbWonCards.ToString(); // Shows the player 1 won cards
+            lblScoreJ1.Text = "Score : " + score.ToString() + " pts"; // Shows the player 1 score
+        }
+
+        public void MakeJ2Score(int score, int nbWonCards)
+        {
+            nbWonCards += 2;
+            lblCartesGagneesJ2.Text = "Cartes gagnées : " + nbWonCards.ToString(); // Shows the player 2 won cards
+            lblScoreJ2.Text = "Score : " + score.ToString() + " pts"; // Shows the player 2 score
+        }
+
+        /// <summary>
+        /// Clear the played cards
+        /// </summary>
+        public void EndCardBattle()
+        {
+            // Clear the list
             j1PlayedCard.RemoveAt(0);
             j2PlayedCard.RemoveAt(0);
 
-           
+            // Clear the cards (visual)
+            flpJ1PlayedCard.Controls.Clear();
+            flpJ2PlayedCard.Controls.Clear();
+
+            // Set which player will start next
+
         }
     }
 }
