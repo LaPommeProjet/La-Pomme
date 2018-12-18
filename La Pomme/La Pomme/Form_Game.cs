@@ -14,7 +14,7 @@ namespace La_Pomme
 {
     public partial class frmLaPomme : Form
     {
-        form2 form2 = new form2(); // Instanciate the second form to set the player names
+        Form_PlayerNames form_PlayerNames = new Form_PlayerNames(); // Instanciate the second form to set the player names
 
         private string[] playerNames; // Contains the player 1 name (index 0) and the player 2 name (index 1)
 
@@ -43,8 +43,8 @@ namespace La_Pomme
 
         private void frmLaPomme_Load(object sender, EventArgs e)
         {
-            form2.ShowDialog(); // Shows the second form
-            playerNames = form2.GetPlayerNames(); // Used to store the player names
+            form_PlayerNames.ShowDialog(); // Shows the second form
+            playerNames = form_PlayerNames.GetPlayerNames(); // Used to store the player names
 
             lblPlayer1.Text = playerNames[0]; // Player 1 name
             lblPlayer2.Text = playerNames[1]; // Player 2 name
@@ -219,6 +219,10 @@ namespace La_Pomme
         /// </summary>
         private void CardBattle()
         {
+            // Locks the decks
+            flpPlayer1Deck.Enabled = false;
+            flpPlayer2Deck.Enabled = false;
+
             bool isAssetJ1Card = false;
             bool isAssetJ2Card = false;           
 
@@ -287,7 +291,7 @@ namespace La_Pomme
 
             CheckForIllegalCrossThreadCalls = false; // To make disapear the two cards at the same time
 
-            Task.Delay(3500).ContinueWith(t => EndCardBattle()); // Delay before clearing the table
+            Task.Delay(5).ContinueWith(t => EndCardBattle()); // Delay before clearing the table
         }
 
         public void MakeJ1Score(int score)
@@ -323,7 +327,9 @@ namespace La_Pomme
 
             if(flpPlayer1Deck.Controls.Count == 0 && flpPlayer2Deck.Controls.Count == 0)
             {
-                MessageBox.Show("GAGNE!");
+                Form_Win form_Win = new Form_Win();
+
+                form_Win.ShowDialog();
             }
             else
             {

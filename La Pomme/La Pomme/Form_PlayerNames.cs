@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace La_Pomme
 {
-    public partial class form2 : Form
+    public partial class Form_PlayerNames : Form
     {
         public static string player1Name;
         public static string player2Name;
 
-        public form2()
+        public Form_PlayerNames()
         {
             InitializeComponent();
         }
