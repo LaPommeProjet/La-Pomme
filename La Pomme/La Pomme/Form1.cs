@@ -14,17 +14,25 @@ namespace La_Pomme
 {
     public partial class frmLaPomme : Form
     {
-        private string[] playerNames; // Contains the player 1 name (index 0) and the player 2 name (index 1)
         form2 form2 = new form2(); // Instanciate the second form to set the player names
-        List<Card> cards = new List<Card>(); // Instanciate the cards list
-        List<Card> player1Deck = new List<Card>(); // Instanciate the deck of the player 1
-        List<Card> player2Deck = new List<Card>(); // Instanciate the deck of the player 2
+
+        private string[] playerNames; // Contains the player 1 name (index 0) and the player 2 name (index 1)
+
+        private List<Card> cards = new List<Card>(); // Instanciate the cards list
+        private List<Card> player1Deck = new List<Card>(); // Instanciate the deck of the player 1
+        private List<Card> player2Deck = new List<Card>(); // Instanciate the deck of the player 2
         private List<Card> j1PlayedCard = new List<Card>(); // Used to store the played card of the player 1
         private List<Card> j2PlayedCard = new List<Card>(); // Used to store the played card of the player 2
         private List<Card> assetCard = new List<Card>(); // Used to store the asset card
+
         private int firstPlayer = 1; // Used to store which player is starting
         private int playerTurn = 1; // Used to store the player turn
         private int nbPlayedCards = 0; // Used to store the number of the played cards
+        private int nbJ1WonCards = 0; // Used to store the number of the player 1 won cards
+        private int nbJ2WonCards = 0; // Used to store the number of the player 2 won cards
+        private int j1Score = 0; // Used to store the score of the player 1
+        private int j2Score = 0; // Used to store the score of the player 2
+
         private Random random;
                 
         public frmLaPomme()
@@ -98,6 +106,9 @@ namespace La_Pomme
                 cards.RemoveAt(i);
             }
 
+            flpJ1PlayedCard.Enabled = false; // The played card can't be touched
+            flpJ2PlayedCard.Enabled = false; // The played card can't be touched
+
             lblPlayer1.ForeColor = Color.Crimson;
             flpPlayer2Deck.Enabled = false; // Disable the player 2 deck because it's the player's 1 turn 
         }
@@ -122,33 +133,45 @@ namespace La_Pomme
         }
 
         /// <summary>
+        /// Card click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CardClickEvent(object sender, MouseEventArgs e)
+        {
+            PictureBox card = sender as PictureBox;
+            int cardId = int.Parse(card.Name);
+            PlayCard(cardId);
+        }
+
+        /// <summary>
         /// Play the selected card
         /// </summary>
         /// <param name="player"></param>
         /// <param name="cardId"></param>
-        public void PlayCard(int player, int cardId)
+        public void PlayCard(int cardId)
         {           
-            if (playerTurn == 2)
+            if (playerTurn == 1)
             {
-                foreach(Card card in player2Deck)
+                foreach (Card card in player1Deck)
                 {
-                    if(card.GetId() == cardId)
-                    {
-                        j2PlayedCard.Add(card);
-                        flpJ2PlayedCard.Controls.Add(card);
-                        flpPlayer2Deck.Controls.Remove(card);  
-                    }
-                }               
-            }
-            else
-            {
-                foreach(Card card in player1Deck)
-                {
-                    if(card.GetId() == cardId)
+                    if (card.GetId() == cardId)
                     {
                         j1PlayedCard.Add(card);
                         flpJ1PlayedCard.Controls.Add(card);
                         flpPlayer1Deck.Controls.Remove(card);
+                    }
+                }
+            }
+            else
+            {
+                foreach (Card card in player2Deck)
+                {
+                    if (card.GetId() == cardId)
+                    {
+                        j2PlayedCard.Add(card);
+                        flpJ2PlayedCard.Controls.Add(card);
+                        flpPlayer2Deck.Controls.Remove(card);
                     }
                 }
             }
@@ -165,41 +188,29 @@ namespace La_Pomme
         }
 
         /// <summary>
-        /// Card click event
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void CardClickEvent(object sender, MouseEventArgs e)
-        {
-            PictureBox card = sender as PictureBox;
-            int cardId = int.Parse(card.Name);
-            PlayCard(playerTurn, cardId);
-        }
-
-        /// <summary>
         /// Shows to the players who can play and who can't
         /// </summary>
         public void SetPlayerTurn()
         {
             if (playerTurn == 1)
             {
-                playerTurn = 2;
-                
                 flpPlayer1Deck.Enabled = false;
                 flpPlayer2Deck.Enabled = true;
 
                 lblPlayer1.ForeColor = Color.White;
                 lblPlayer2.ForeColor = Color.Crimson;
+
+                playerTurn = 2;
             }
             else
             {
-                playerTurn = 1;
-
                 flpPlayer2Deck.Enabled = false;
                 flpPlayer1Deck.Enabled = true;
 
                 lblPlayer1.ForeColor = Color.Crimson;
                 lblPlayer2.ForeColor = Color.White;
+
+                playerTurn = 1;
             } 
         }
 
@@ -209,11 +220,7 @@ namespace La_Pomme
         private void CardBattle()
         {
             bool isAssetJ1Card = false;
-            bool isAssetJ2Card = false;
-            int nbJ1WonCards = 0;
-            int nbJ2WonCards = 0;
-            int j1Score = 0;
-            int j2Score = 0;
+            bool isAssetJ2Card = false;           
 
             if (j1PlayedCard[0].GetCardType() == assetCard[0].GetCardType())
             {
@@ -230,23 +237,23 @@ namespace La_Pomme
                 if (j1PlayedCard[0].GetCardValueWithAsset() > j2PlayedCard[0].GetCardValueWithAsset())
                 {
                     j1Score += j1PlayedCard[0].GetPointsWithAsset() + j2PlayedCard[0].GetPointsWithAsset(); // Stores the total of the won points
-                    MakeJ1Score(j1Score, nbJ1WonCards); // Make the score of the player
+                    MakeJ1Score(j1Score); // Make the score of the player
                 }
                 else
                 {
                     j2Score += j1PlayedCard[0].GetPointsWithAsset() + j2PlayedCard[0].GetPointsWithAsset(); // Stores the total of the won points
-                    MakeJ2Score(j2Score, nbJ2WonCards); // Make the score of the player
+                    MakeJ2Score(j2Score); // Make the score of the player
                 }
             }
             else if(isAssetJ1Card == true && isAssetJ2Card == false)
             {
                 j1Score += j1PlayedCard[0].GetPointsWithAsset() + j2PlayedCard[0].GetPointsWithoutAsset(); // Stores the total of the won points
-                MakeJ1Score(j1Score, nbJ1WonCards); // Make the score of the player
+                MakeJ1Score(j1Score); // Make the score of the player
             }
             else if(isAssetJ1Card == false && isAssetJ2Card == true)
             {
                 j2Score += j1PlayedCard[0].GetPointsWithoutAsset() + j2PlayedCard[0].GetPointsWithAsset(); // Stores the total of the won points
-                MakeJ2Score(j2Score, nbJ2WonCards); // Make the score of the player
+                MakeJ2Score(j2Score); // Make the score of the player
             }
             else 
             {
@@ -255,12 +262,12 @@ namespace La_Pomme
                     if(j1PlayedCard[0].GetCardValueWithoutAsset() > j2PlayedCard[0].GetCardValueWithoutAsset())
                     {
                         j1Score += j1PlayedCard[0].GetPointsWithoutAsset() + j2PlayedCard[0].GetPointsWithoutAsset(); // Stores the total of the won points
-                        MakeJ1Score(j1Score, nbJ1WonCards); // Make the score of the player
+                        MakeJ1Score(j1Score); // Make the score of the player
                     }
                     else
                     {
                         j2Score += j1PlayedCard[0].GetPointsWithoutAsset() + j2PlayedCard[0].GetPointsWithoutAsset(); // Stores the total of the won points
-                        MakeJ2Score(j2Score, nbJ2WonCards); // Make the score of the player
+                        MakeJ2Score(j2Score); // Make the score of the player
                     }
                 }
                 else
@@ -268,12 +275,12 @@ namespace La_Pomme
                     if(firstPlayer == 1)
                     {
                         j1Score += j1PlayedCard[0].GetPointsWithoutAsset() + j2PlayedCard[0].GetPointsWithoutAsset(); // Stores the total of the won points
-                        MakeJ1Score(j1Score, nbJ1WonCards); // Make the score of the player
+                        MakeJ1Score(j1Score); // Make the score of the player
                     }
                     else
                     {
                         j2Score += j1PlayedCard[0].GetPointsWithoutAsset() + j2PlayedCard[0].GetPointsWithoutAsset(); // Stores the total of the won points
-                        MakeJ2Score(j2Score, nbJ2WonCards); // Make the score of the player
+                        MakeJ2Score(j2Score); // Make the score of the player
                     }
                 }
             }
@@ -283,18 +290,22 @@ namespace La_Pomme
             Task.Delay(3500).ContinueWith(t => EndCardBattle()); // Delay before clearing the table
         }
 
-        public void MakeJ1Score(int score, int nbWonCards)
+        public void MakeJ1Score(int score)
         {
-            nbWonCards += 2;
-            lblCartesGagneesJ1.Text = "Cartes gagnées : " + nbWonCards.ToString(); // Shows the player 1 won cards
+            nbJ1WonCards += 2;
+            lblCartesGagneesJ1.Text = "Cartes gagnées : " + nbJ1WonCards.ToString(); // Shows the player 1 won cards
             lblScoreJ1.Text = "Score : " + score.ToString() + " pts"; // Shows the player 1 score
+
+            firstPlayer = 1; // To know which player won
         }
 
-        public void MakeJ2Score(int score, int nbWonCards)
+        public void MakeJ2Score(int score)
         {
-            nbWonCards += 2;
-            lblCartesGagneesJ2.Text = "Cartes gagnées : " + nbWonCards.ToString(); // Shows the player 2 won cards
+            nbJ2WonCards += 2;
+            lblCartesGagneesJ2.Text = "Cartes gagnées : " + nbJ2WonCards.ToString(); // Shows the player 2 won cards
             lblScoreJ2.Text = "Score : " + score.ToString() + " pts"; // Shows the player 2 score
+
+            firstPlayer = 2; // To know which player won
         }
 
         /// <summary>
@@ -310,8 +321,24 @@ namespace La_Pomme
             flpJ1PlayedCard.Controls.Clear();
             flpJ2PlayedCard.Controls.Clear();
 
-            // Set which player will start next
+            if(flpPlayer1Deck.Controls.Count == 0 && flpPlayer2Deck.Controls.Count == 0)
+            {
+                MessageBox.Show("GAGNE!");
+            }
+            else
+            {
+                // Set which player will start next turn
+                if (firstPlayer == 1)
+                {
+                    playerTurn = 2;
+                }
+                else
+                {
+                    playerTurn = 1;
+                }
 
+                SetPlayerTurn();
+            }
         }
     }
 }

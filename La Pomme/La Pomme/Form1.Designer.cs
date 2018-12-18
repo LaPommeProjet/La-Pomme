@@ -100,7 +100,7 @@
             this.lblCartesGagneesJ1.AutoSize = true;
             this.lblCartesGagneesJ1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCartesGagneesJ1.ForeColor = System.Drawing.Color.White;
-            this.lblCartesGagneesJ1.Location = new System.Drawing.Point(799, 454);
+            this.lblCartesGagneesJ1.Location = new System.Drawing.Point(789, 460);
             this.lblCartesGagneesJ1.Name = "lblCartesGagneesJ1";
             this.lblCartesGagneesJ1.Size = new System.Drawing.Size(120, 16);
             this.lblCartesGagneesJ1.TabIndex = 17;
@@ -111,7 +111,7 @@
             this.lblCartesGagneesJ2.AutoSize = true;
             this.lblCartesGagneesJ2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCartesGagneesJ2.ForeColor = System.Drawing.Color.White;
-            this.lblCartesGagneesJ2.Location = new System.Drawing.Point(799, 15);
+            this.lblCartesGagneesJ2.Location = new System.Drawing.Point(789, 21);
             this.lblCartesGagneesJ2.Name = "lblCartesGagneesJ2";
             this.lblCartesGagneesJ2.Size = new System.Drawing.Size(120, 16);
             this.lblCartesGagneesJ2.TabIndex = 18;
@@ -158,7 +158,7 @@
             this.lblScoreJ1.AutoSize = true;
             this.lblScoreJ1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScoreJ1.ForeColor = System.Drawing.Color.White;
-            this.lblScoreJ1.Location = new System.Drawing.Point(799, 485);
+            this.lblScoreJ1.Location = new System.Drawing.Point(789, 488);
             this.lblScoreJ1.Name = "lblScoreJ1";
             this.lblScoreJ1.Size = new System.Drawing.Size(89, 16);
             this.lblScoreJ1.TabIndex = 19;
@@ -169,7 +169,7 @@
             this.lblScoreJ2.AutoSize = true;
             this.lblScoreJ2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScoreJ2.ForeColor = System.Drawing.Color.White;
-            this.lblScoreJ2.Location = new System.Drawing.Point(799, 48);
+            this.lblScoreJ2.Location = new System.Drawing.Point(789, 49);
             this.lblScoreJ2.Name = "lblScoreJ2";
             this.lblScoreJ2.Size = new System.Drawing.Size(89, 16);
             this.lblScoreJ2.TabIndex = 20;
