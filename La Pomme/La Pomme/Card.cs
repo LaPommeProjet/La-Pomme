@@ -9,6 +9,8 @@ namespace La_Pomme
 {
     class Card : PictureBox
     {
+        private const int CARD_HEIGHT = 99;
+        private const int CARD_WIDTH = 75;
         private int id;
         private string type;
         private string name;
@@ -17,7 +19,6 @@ namespace La_Pomme
         private int pointsWithoutAsset;
         private int pointsWithAsset;
         private string image;
-        private int player;
 
         /// <summary>
         /// Constructor
@@ -37,7 +38,9 @@ namespace La_Pomme
             this.valueWithAsset = valueWithAsset;
             this.pointsWithoutAsset = pointsWithoutAsset;
             this.pointsWithAsset = pointsWithAsset;
-            this.image = image;
+            this.ImageLocation = image;
+            this.Height = CARD_HEIGHT;
+            this.Width = CARD_WIDTH;
         }  
 
         /// <summary>
@@ -68,15 +71,6 @@ namespace La_Pomme
         }
 
         /// <summary>
-        /// Get the image URL of the card
-        /// </summary>
-        /// <returns></returns>
-        public string GetImage()
-        {
-            return image;
-        }
-
-        /// <summary>
         /// Get the name of the card
         /// </summary>
         /// <returns></returns>
@@ -93,16 +87,7 @@ namespace La_Pomme
         {
             return type;
         }
-
-        /// <summary>
-        /// Set the player that has the card
-        /// </summary>
-        /// <param name="playerName"></param>
-        public void SetPlayerCard(int player)
-        {
-            this.player = player;
-        }
-
+        
         public int GetPointsWithoutAsset()
         {
             return pointsWithoutAsset;

@@ -59,5 +59,30 @@ namespace La_Pomme.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Id;Type;Nom;ValeurSansAtout;ValeurAvecAtout;PointsSansAtout;PointsAvecAtout;Image
+        ///1;Coeur;6;1;1;0;0;6h.gif
+        ///2;Coeur;7;2;2;0;0;7h.gif
+        ///3;Coeur;8;3;3;0;0;8h.gif
+        ///4;Coeur;9;4;14;0;14;9h.gif
+        ///5;Coeur;10;5;5;10;10;10h.gif
+        ///6;Coeur;Valet;6;20;2;20;Jh.gif
+        ///7;Coeur;Reine;7;7;3;3;Qh.gif
+        ///8;Coeur;Roi;8;8;4;4;Kh.gif
+        ///9;Coeur;As;9;9;11;11;Ah.gif
+        ///10;Pique;6;1;1;0;0;6s.gif
+        ///11;Pique;7;2;2;0;0;7s.gif
+        ///12;Pique;8;3;3;0;0;8s.gif
+        ///13;Pique;9;4;14;0;14;9s.gif
+        ///14;Pique;10;5;5;10;10;10s.gif
+        ///15;Pique;Valet;6;20;2;20;Js.gif
+        /// [le reste de la chaîne a été tronqué]&quot;;.
+        /// </summary>
+        internal static string cards {
+            get {
+                return ResourceManager.GetString("cards", resourceCulture);
+            }
+        }
     }
 }

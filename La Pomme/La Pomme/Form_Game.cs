@@ -19,11 +19,6 @@ namespace La_Pomme
         private string[] playerNames; // Contains the player 1 name (index 0) and the player 2 name (index 1)
 
         private List<Card> cards = new List<Card>(); // Instanciate the cards list
-        private List<Card> player1Deck = new List<Card>(); // Instanciate the deck of the player 1
-        private List<Card> player2Deck = new List<Card>(); // Instanciate the deck of the player 2
-        private List<Card> j1PlayedCard = new List<Card>(); // Used to store the played card of the player 1
-        private List<Card> j2PlayedCard = new List<Card>(); // Used to store the played card of the player 2
-        private List<Card> assetCard = new List<Card>(); // Used to store the asset card
 
         private int firstPlayer = 1; // Used to store which player is starting
         private int playerTurn = 1; // Used to store the player turn
@@ -49,63 +44,11 @@ namespace La_Pomme
             lblPlayer1.Text = playerNames[0]; // Player 1 name
             lblPlayer2.Text = playerNames[1]; // Player 2 name
 
-            string filePath = @"cards.csv";
-            StreamReader streamReader = new StreamReader(filePath);
-
-            //Pour ne pas traiter l'entête
-            streamReader.ReadLine();
-
-            while (!streamReader.EndOfStream)
-            {
-                string[] line = streamReader.ReadLine().Split(';');
-                Card card = new Card(int.Parse(line[0]), line[1], line[2], int.Parse(line[3]), int.Parse(line[4]), int.Parse(line[5]), int.Parse(line[6]), line[7]); // Création de la carte
-                card.MouseClick += new MouseEventHandler(CardClickEvent); // Add a clic event on the card
-                card.Cursor = Cursors.Hand;
-
-                cards.Add(card);
-            }
-
-            Shuffle(cards); // Call the shuffle function
-
-            assetCard.Add(cards[0]); // Set the asset card for the rest of the game
-            ptbAtout.ImageLocation = cards[0].GetImage(); // Set the image of the asset for the rest of the game
-            cards.RemoveAt(0); // Remove the card from the main deck
-
-            // Insert 9 cards to the player 1 deck
-            for (int i = 0; i <= 8; i++)
-            {
-                cards[i].Name = cards[i].GetId().ToString();
-                cards[i].ImageLocation = @cards[i].GetImage();
-                cards[i].Size = new Size(75, 99);
-                cards[i].SetPlayerCard(1);
-
-                player1Deck.Add(cards[i]);
-                flpPlayer1Deck.Controls.Add(cards[i]);
-            }
-
-            // Remove the cards from the main deck
-            for(int i = 8; i >= 0; i--)
-            {
-                cards.RemoveAt(i);
-            }
-
-            // Insert 9 cards to the player 2 deck
-            for (int i = 9; i <= 17; i++)
-            {
-                cards[i].Name = cards[i].GetId().ToString();
-                cards[i].ImageLocation = @cards[i].GetImage();
-                cards[i].Size = new Size(75, 99);
-                cards[i].SetPlayerCard(2);
-
-                player2Deck.Add(cards[i]);
-                flpPlayer2Deck.Controls.Add(cards[i]);
-            }
-
-            // Remove the cards from the main deck
-            for (int i = 17; i >= 9; i--)
-            {
-                cards.RemoveAt(i);
-            }
+            ImportCards();
+            Shuffle(cards);
+            SetAsset();
+            SetPlayerDecks();
+            
 
             flpJ1PlayedCard.Enabled = false; // The played card can't be touched
             flpJ2PlayedCard.Enabled = false; // The played card can't be touched
@@ -134,6 +77,58 @@ namespace La_Pomme
         }
 
         /// <summary>
+        /// Creates a list of cards from csv file
+        /// </summary>
+        public void ImportCards()
+        {
+            string filePath = @"cards.csv";
+            StreamReader streamReader = new StreamReader(filePath);
+
+            //Pour ne pas traiter l'entête
+            streamReader.ReadLine();
+
+            while (!streamReader.EndOfStream)
+            {
+                string[] line = streamReader.ReadLine().Split(';');
+                Card card = new Card(int.Parse(line[0]), line[1], line[2], int.Parse(line[3]), int.Parse(line[4]), int.Parse(line[5]), int.Parse(line[6]), line[7]); // Création de la carte
+                card.MouseClick += new MouseEventHandler(CardClickEvent); // Add a clic event on the card
+                card.Cursor = Cursors.Hand;
+
+                cards.Add(card);
+            }
+        }
+
+        /// <summary>
+        /// Set the asset card for the rest of the game
+        /// </summary>
+        public void SetAsset()
+        {
+            flpAssetCard.Controls.Add(cards[0]);
+            flpAssetCard.Enabled = false;
+            cards.RemoveAt(0); // Remove the card from the main deck
+        }
+
+        /// <summary>
+        /// Make the player decks
+        /// </summary>
+        public void SetPlayerDecks()
+        {
+            // Insert 9 cards to the player 1 deck and remove them from the main deck
+            for (int i = 8; i >= 0; i--)
+            {
+                flpPlayer1Deck.Controls.Add(cards[i]);
+                cards.RemoveAt(i);
+            }
+
+            // Insert 9 cards to the player 2 deck and remove them from the main deck
+            for (int i = 8; i >= 0; i--)
+            {
+                flpPlayer2Deck.Controls.Add(cards[i]);
+                cards.RemoveAt(i);
+            }
+        }
+
+        /// <summary>
         /// Plays the selected card
         /// </summary>
         /// <param name="sender"></param>
@@ -141,31 +136,16 @@ namespace La_Pomme
         private void CardClickEvent(object sender, MouseEventArgs e)
         {
             PictureBox pictureBox = sender as PictureBox;
-            int cardId = int.Parse(pictureBox.Name);
 
             if (playerTurn == 1)
             {
-                foreach (Card card in player1Deck)
-                {
-                    if (card.GetId() == cardId)
-                    {
-                        j1PlayedCard.Add(card);
-                        flpJ1PlayedCard.Controls.Add(card);
-                        flpPlayer1Deck.Controls.Remove(card);
-                    }
-                }
+                flpJ1PlayedCard.Controls.Add(pictureBox);
+                flpPlayer1Deck.Controls.Remove(pictureBox);
             }
             else
             {
-                foreach (Card card in player2Deck)
-                {
-                    if (card.GetId() == cardId)
-                    {
-                        j2PlayedCard.Add(card);
-                        flpJ2PlayedCard.Controls.Add(card);
-                        flpPlayer2Deck.Controls.Remove(card);
-                    }
-                }
+                flpJ2PlayedCard.Controls.Add(pictureBox);
+                flpPlayer2Deck.Controls.Remove(pictureBox);
             }
 
             nbPlayedCards++;
@@ -215,54 +195,59 @@ namespace La_Pomme
             flpPlayer1Deck.Enabled = false;
             flpPlayer2Deck.Enabled = false;
 
+            // Stores the pictureboxs controls as a card
+            Card j1PlayedCard = flpJ1PlayedCard.Controls[0] as Card; 
+            Card j2PlayedCard = flpJ2PlayedCard.Controls[0] as Card;
+            Card assetCard = flpAssetCard.Controls[0] as Card;
+
             bool isAssetJ1Card = false;
             bool isAssetJ2Card = false;           
 
-            if (j1PlayedCard[0].GetCardType() == assetCard[0].GetCardType())
+            if (j1PlayedCard.GetCardType() == assetCard.GetCardType())
             {
                 isAssetJ1Card = true;                    
             }
 
-            if (j2PlayedCard[0].GetCardType() == assetCard[0].GetCardType())
+            if (j2PlayedCard.GetCardType() == assetCard.GetCardType())
             {
                 isAssetJ2Card = true;
             }
 
             if(isAssetJ1Card == true && isAssetJ2Card == true)
             {
-                if (j1PlayedCard[0].GetCardValueWithAsset() > j2PlayedCard[0].GetCardValueWithAsset())
+                if (j1PlayedCard.GetCardValueWithAsset() > j2PlayedCard.GetCardValueWithAsset())
                 {
-                    j1Score += j1PlayedCard[0].GetPointsWithAsset() + j2PlayedCard[0].GetPointsWithAsset(); // Stores the total of the won points
+                    j1Score += j1PlayedCard.GetPointsWithAsset() + j2PlayedCard.GetPointsWithAsset(); // Stores the total of the won points
                     MakeJ1Score(j1Score); // Make the score of the player
                 }
                 else
                 {
-                    j2Score += j1PlayedCard[0].GetPointsWithAsset() + j2PlayedCard[0].GetPointsWithAsset(); // Stores the total of the won points
+                    j2Score += j1PlayedCard.GetPointsWithAsset() + j2PlayedCard.GetPointsWithAsset(); // Stores the total of the won points
                     MakeJ2Score(j2Score); // Make the score of the player
                 }
             }
             else if(isAssetJ1Card == true && isAssetJ2Card == false)
             {
-                j1Score += j1PlayedCard[0].GetPointsWithAsset() + j2PlayedCard[0].GetPointsWithoutAsset(); // Stores the total of the won points
+                j1Score += j1PlayedCard.GetPointsWithAsset() + j2PlayedCard.GetPointsWithoutAsset(); // Stores the total of the won points
                 MakeJ1Score(j1Score); // Make the score of the player
             }
             else if(isAssetJ1Card == false && isAssetJ2Card == true)
             {
-                j2Score += j1PlayedCard[0].GetPointsWithoutAsset() + j2PlayedCard[0].GetPointsWithAsset(); // Stores the total of the won points
+                j2Score += j1PlayedCard.GetPointsWithoutAsset() + j2PlayedCard.GetPointsWithAsset(); // Stores the total of the won points
                 MakeJ2Score(j2Score); // Make the score of the player
             }
             else 
             {
-                if (j1PlayedCard[0].GetCardType() == j2PlayedCard[0].GetCardType())
+                if (j1PlayedCard.GetCardType() == j2PlayedCard.GetCardType())
                 {
-                    if(j1PlayedCard[0].GetCardValueWithoutAsset() > j2PlayedCard[0].GetCardValueWithoutAsset())
+                    if(j1PlayedCard.GetCardValueWithoutAsset() > j2PlayedCard.GetCardValueWithoutAsset())
                     {
-                        j1Score += j1PlayedCard[0].GetPointsWithoutAsset() + j2PlayedCard[0].GetPointsWithoutAsset(); // Stores the total of the won points
+                        j1Score += j1PlayedCard.GetPointsWithoutAsset() + j2PlayedCard.GetPointsWithoutAsset(); // Stores the total of the won points
                         MakeJ1Score(j1Score); // Make the score of the player
                     }
                     else
                     {
-                        j2Score += j1PlayedCard[0].GetPointsWithoutAsset() + j2PlayedCard[0].GetPointsWithoutAsset(); // Stores the total of the won points
+                        j2Score += j1PlayedCard.GetPointsWithoutAsset() + j2PlayedCard.GetPointsWithoutAsset(); // Stores the total of the won points
                         MakeJ2Score(j2Score); // Make the score of the player
                     }
                 }
@@ -270,12 +255,12 @@ namespace La_Pomme
                 {
                     if(firstPlayer == 1)
                     {
-                        j1Score += j1PlayedCard[0].GetPointsWithoutAsset() + j2PlayedCard[0].GetPointsWithoutAsset(); // Stores the total of the won points
+                        j1Score += j1PlayedCard.GetPointsWithoutAsset() + j2PlayedCard.GetPointsWithoutAsset(); // Stores the total of the won points
                         MakeJ1Score(j1Score); // Make the score of the player
                     }
                     else
                     {
-                        j2Score += j1PlayedCard[0].GetPointsWithoutAsset() + j2PlayedCard[0].GetPointsWithoutAsset(); // Stores the total of the won points
+                        j2Score += j1PlayedCard.GetPointsWithoutAsset() + j2PlayedCard.GetPointsWithoutAsset(); // Stores the total of the won points
                         MakeJ2Score(j2Score); // Make the score of the player
                     }
                 }
@@ -283,7 +268,7 @@ namespace La_Pomme
 
             CheckForIllegalCrossThreadCalls = false; // To make disapear the two cards at the same time
 
-            Task.Delay(3500).ContinueWith(t => EndCardBattle()); // Delay before clearing the table
+            Task.Delay(1).ContinueWith(t => EndCardBattle()); // Delay before clearing the table
         }
 
         public void MakeJ1Score(int score)
@@ -309,15 +294,11 @@ namespace La_Pomme
         /// </summary>
         public void EndCardBattle()
         {
-            // Clear the list
-            j1PlayedCard.RemoveAt(0);
-            j2PlayedCard.RemoveAt(0);
-
-            // Clear the cards (visual)
+            // Clear the played cards 
             flpJ1PlayedCard.Controls.Clear();
             flpJ2PlayedCard.Controls.Clear();
 
-            if(flpPlayer1Deck.Controls.Count == 0 && flpPlayer2Deck.Controls.Count == 0)
+            if(flpPlayer1Deck.Controls.Count == 0)
             {
                 string victoryName = "";
                 string victoryPoints = "";
@@ -336,7 +317,7 @@ namespace La_Pomme
                     victoryCards = nbJ2WonCards.ToString();
                 }
 
-                MessageBox.Show("Victoire de " + victoryName + " qui a fait " + victoryPoints + " en collectant " + victoryCards + " cartes!");
+                MessageBox.Show("Victoire de " + victoryName + " qui a fait " + victoryPoints + " points en collectant " + victoryCards + " cartes!");
             }
             else
             {

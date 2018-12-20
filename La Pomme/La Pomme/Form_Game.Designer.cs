@@ -37,7 +37,6 @@
             this.lblCartesGagneesJ2 = new System.Windows.Forms.Label();
             this.ptbScoreJ2 = new System.Windows.Forms.PictureBox();
             this.ptbPioche = new System.Windows.Forms.PictureBox();
-            this.ptbAtout = new System.Windows.Forms.PictureBox();
             this.ptbScoreJ1 = new System.Windows.Forms.PictureBox();
             this.lblScoreJ1 = new System.Windows.Forms.Label();
             this.lblScoreJ2 = new System.Windows.Forms.Label();
@@ -45,9 +44,9 @@
             this.flpPlayer1Deck = new System.Windows.Forms.FlowLayoutPanel();
             this.flpJ1PlayedCard = new System.Windows.Forms.FlowLayoutPanel();
             this.flpJ2PlayedCard = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpAssetCard = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.ptbScoreJ2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPioche)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAtout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbScoreJ1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,15 +134,6 @@
             this.ptbPioche.TabIndex = 11;
             this.ptbPioche.TabStop = false;
             // 
-            // ptbAtout
-            // 
-            this.ptbAtout.Image = ((System.Drawing.Image)(resources.GetObject("ptbAtout.Image")));
-            this.ptbAtout.Location = new System.Drawing.Point(501, 241);
-            this.ptbAtout.Name = "ptbAtout";
-            this.ptbAtout.Size = new System.Drawing.Size(75, 99);
-            this.ptbAtout.TabIndex = 10;
-            this.ptbAtout.TabStop = false;
-            // 
             // ptbScoreJ1
             // 
             this.ptbScoreJ1.Image = ((System.Drawing.Image)(resources.GetObject("ptbScoreJ1.Image")));
@@ -205,12 +195,20 @@
             this.flpJ2PlayedCard.Size = new System.Drawing.Size(84, 105);
             this.flpJ2PlayedCard.TabIndex = 10;
             // 
+            // flpAssetCard
+            // 
+            this.flpAssetCard.Location = new System.Drawing.Point(501, 241);
+            this.flpAssetCard.Name = "flpAssetCard";
+            this.flpAssetCard.Size = new System.Drawing.Size(75, 99);
+            this.flpAssetCard.TabIndex = 21;
+            // 
             // frmLaPomme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaGreen;
             this.ClientSize = new System.Drawing.Size(1012, 561);
+            this.Controls.Add(this.flpAssetCard);
             this.Controls.Add(this.flpJ2PlayedCard);
             this.Controls.Add(this.flpJ1PlayedCard);
             this.Controls.Add(this.lblScoreJ2);
@@ -225,7 +223,6 @@
             this.Controls.Add(this.ptbPioche);
             this.Controls.Add(this.flpPlayer1Deck);
             this.Controls.Add(this.flpPlayer2Deck);
-            this.Controls.Add(this.ptbAtout);
             this.Controls.Add(this.ptbScoreJ1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -236,7 +233,6 @@
             this.Load += new System.EventHandler(this.frmLaPomme_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptbScoreJ2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPioche)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAtout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbScoreJ1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -244,7 +240,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox ptbAtout;
         private System.Windows.Forms.PictureBox ptbPioche;
         private System.Windows.Forms.Label lblPioche;
         private System.Windows.Forms.Label lblAtout;
@@ -260,6 +255,7 @@
         private System.Windows.Forms.FlowLayoutPanel flpPlayer1Deck;
         private System.Windows.Forms.FlowLayoutPanel flpJ1PlayedCard;
         private System.Windows.Forms.FlowLayoutPanel flpJ2PlayedCard;
+        private System.Windows.Forms.FlowLayoutPanel flpAssetCard;
     }
 }
 

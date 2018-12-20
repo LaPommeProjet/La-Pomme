@@ -86,18 +86,19 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <None Include="bin\Debug\cards.csv" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -106,36 +107,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\dos.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\dos1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\6d.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Ac.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\9h.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\10d.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Qs.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\7s.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Js.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Kh.gif" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
@@ -148,6 +119,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
