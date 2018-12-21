@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-
+using Apache.NMS.ActiveMQ.Commands;
 
 namespace La_Pomme
 {
@@ -20,8 +20,8 @@ namespace La_Pomme
 
         private List<Card> cards = new List<Card>(); // Instanciate the cards list
 
-        private int firstPlayer = 1; // Used to store which player is starting
-        private int playerTurn = 1; // Used to store the player turn
+        private int firstPlayer = 2; // Used to store which player is starting
+        private int playerTurn = 2; // Used to store the player turn
         private int nbPlayedCards = 0; // Used to store the number of the played cards
         private int nbJ1WonCards = 0; // Used to store the number of the player 1 won cards
         private int nbJ2WonCards = 0; // Used to store the number of the player 2 won cards
@@ -48,13 +48,7 @@ namespace La_Pomme
             Shuffle(cards);
             SetAsset();
             SetPlayerDecks();
-            
-
-            flpJ1PlayedCard.Enabled = false; // The played card can't be touched
-            flpJ2PlayedCard.Enabled = false; // The played card can't be touched
-
-            lblPlayer1.ForeColor = Color.Crimson;
-            flpPlayer2Deck.Enabled = false; // Disable the player 2 deck because it's the player's 1 turn 
+            SetPlayerTurn();
         }
 
         /// <summary>

@@ -11,14 +11,13 @@ namespace La_Pomme
     {
         private const int CARD_HEIGHT = 99;
         private const int CARD_WIDTH = 75;
-        private int id;
+
         private string type;
         private string name;
         private int valueWithAsset;
         private int valueWithoutAsset;
         private int pointsWithoutAsset;
         private int pointsWithAsset;
-        private string image;
 
         /// <summary>
         /// Constructor
@@ -41,15 +40,6 @@ namespace La_Pomme
             this.Height = CARD_HEIGHT;
             this.Width = CARD_WIDTH;
         }  
-
-        /// <summary>
-        /// Gets the id of the card
-        /// </summary>
-        /// <returns></returns>
-        public int GetId()
-        {
-            return id;
-        }
 
         /// <summary>
         /// Gets the value without asset of the card
@@ -86,12 +76,20 @@ namespace La_Pomme
         {
             return type;
         }
-        
+
+        /// <summary>
+        /// Gets the points of the card
+        /// </summary>
+        /// <returns></returns>
         public int GetPointsWithoutAsset()
         {
             return pointsWithoutAsset;
         }
 
+        /// <summary>
+        /// Gets the points of the card if it is an asset
+        /// </summary>
+        /// <returns></returns>
         public int GetPointsWithAsset()
         {
             return pointsWithAsset;
