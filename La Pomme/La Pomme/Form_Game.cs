@@ -90,7 +90,7 @@ namespace La_Pomme
             while (!streamReader.EndOfStream)
             {
                 string[] line = streamReader.ReadLine().Split(';');
-                Card card = new Card(int.Parse(line[0]), line[1], line[2], int.Parse(line[3]), int.Parse(line[4]), int.Parse(line[5]), int.Parse(line[6]), line[7]); // Création de la carte
+                Card card = new Card(line[0], line[1], int.Parse(line[2]), int.Parse(line[3]), int.Parse(line[4]), int.Parse(line[5]), line[6]); // Création de la carte
                 card.MouseClick += new MouseEventHandler(CardClickEvent); // Add a clic event on the card
                 card.Cursor = Cursors.Hand;
 
@@ -157,6 +157,10 @@ namespace La_Pomme
                 CardBattle(); // Calls the card battle function when the second player played
                 nbPlayedCards = 0;
             }
+            else
+            {
+                CheckPlayedCard();
+            }
         }
 
         /// <summary>
@@ -184,6 +188,92 @@ namespace La_Pomme
 
                 playerTurn = 1;
             } 
+        }
+
+        /// <summary>
+        /// Check the played card and only enable the same card type or asset type
+        /// </summary>
+        public void CheckPlayedCard()
+        {
+            bool deckContainsSameType = false;
+            Card assetCard = flpAssetCard.Controls[0] as Card;
+
+            if (playerTurn == 1)
+            {
+                foreach (PictureBox pictureBox in flpPlayer1Deck.Controls)
+                {
+                    Card card = pictureBox as Card;
+                    Card j2PlayedCard = flpJ2PlayedCard.Controls[0] as Card;
+
+                    if (card.GetCardType() == j2PlayedCard.GetCardType())
+                    {
+                        deckContainsSameType = true;
+                        card.Enabled = true;
+                    }
+                    else if(card.GetCardType() == assetCard.GetCardType())
+                    {
+                        card.Enabled = true;
+                    }  
+                    else
+                    {
+                        card.Enabled = false;
+                    }
+                }
+
+                if (deckContainsSameType == false)
+                {
+                    EnableJ1Deck();
+                }
+            }
+            else
+            {
+                foreach (PictureBox pictureBox in flpPlayer2Deck.Controls)
+                {
+                    Card card = pictureBox as Card;
+                    Card j1PlayedCard = flpJ1PlayedCard.Controls[0] as Card;
+
+                    if (card.GetCardType() == j1PlayedCard.GetCardType())
+                    {
+                        deckContainsSameType = true;
+                        card.Enabled = true;
+                    }
+                    else if (card.GetCardType() == assetCard.GetCardType())
+                    {
+                        card.Enabled = true;
+                    }
+                    else
+                    {
+                        card.Enabled = false;
+                    }
+                }
+
+                if (deckContainsSameType == false)
+                {
+                    EnableJ2Deck();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Enables the whole cards of the player 1 deck
+        /// </summary>
+        private void EnableJ1Deck()
+        {
+            foreach (PictureBox pictureBox in flpPlayer1Deck.Controls)
+            {
+                pictureBox.Enabled = true;
+            }
+        }
+
+        /// <summary>
+        /// Enables the whole cards of the player 2 deck
+        /// </summary>
+        private void EnableJ2Deck()
+        {
+            foreach (PictureBox pictureBox in flpPlayer2Deck.Controls)
+            {
+                pictureBox.Enabled = true;
+            }
         }
 
         /// <summary>
@@ -318,18 +408,23 @@ namespace La_Pomme
                 }
 
                 MessageBox.Show("Victoire de " + victoryName + " qui a fait " + victoryPoints + " points en collectant " + victoryCards + " cartes!");
+
+                Close();
             }
             else
             {
                 // Set which player will start next turn
                 if (firstPlayer == 1)
                 {
-                    playerTurn = 2;
+                    playerTurn = 2;                   
                 }
                 else
                 {
-                    playerTurn = 1;
+                    playerTurn = 1;                   
                 }
+
+                EnableJ1Deck();
+                EnableJ2Deck();
 
                 SetPlayerTurn();
             }

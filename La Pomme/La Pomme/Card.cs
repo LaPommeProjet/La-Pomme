@@ -29,9 +29,8 @@ namespace La_Pomme
         /// <param name="pointsWithoutAsset"></param>
         /// <param name="pointsWithAsset"></param>
         /// <param name="image"></param>
-        public Card(int id, string type, string name, int valueWithoutAsset, int valueWithAsset, int pointsWithoutAsset, int pointsWithAsset, string image)
+        public Card(string type, string name, int valueWithoutAsset, int valueWithAsset, int pointsWithoutAsset, int pointsWithAsset, string image)
         {
-            this.id = id;
             this.type = type;
             this.name = name;
             this.valueWithoutAsset = valueWithoutAsset;
