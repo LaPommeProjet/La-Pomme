@@ -275,14 +275,18 @@ namespace La_Pomme
         /// </summary>
         private void CardBattle()
         {
+            // Stores the pictureboxs controls as a card
+            Card j1PlayedCard = flpJ1PlayedCard.Controls[0] as Card;
+            Card j2PlayedCard = flpJ2PlayedCard.Controls[0] as Card;
+            Card assetCard = flpAssetCard.Controls[0] as Card;
+
             // Locks the decks
             flpPlayer1Deck.Enabled = false;
             flpPlayer2Deck.Enabled = false;
 
-            // Stores the pictureboxs controls as a card
-            Card j1PlayedCard = flpJ1PlayedCard.Controls[0] as Card; 
-            Card j2PlayedCard = flpJ2PlayedCard.Controls[0] as Card;
-            Card assetCard = flpAssetCard.Controls[0] as Card;
+            // Locks the played cards
+            j1PlayedCard.Enabled = false;
+            j2PlayedCard.Enabled = false;
 
             bool isAssetJ1Card = false;
             bool isAssetJ2Card = false;           
@@ -352,7 +356,7 @@ namespace La_Pomme
 
             CheckForIllegalCrossThreadCalls = false; // To make disapear the two cards at the same time
 
-            Task.Delay(1).ContinueWith(t => EndCardBattle()); // Delay before clearing the table
+            Task.Delay(3000).ContinueWith(t => EndCardBattle()); // Delay before clearing the table
         }
 
         public void MakeJ1Score(int score)
@@ -379,8 +383,8 @@ namespace La_Pomme
         public void EndCardBattle()
         {
             // Clear the played cards 
-            flpJ1PlayedCard.Controls.Clear();
-            flpJ2PlayedCard.Controls.Clear();
+            flpJ1PlayedCard.Controls.RemoveAt(0);
+            flpJ2PlayedCard.Controls.RemoveAt(0);
 
             if(flpPlayer1Deck.Controls.Count == 0)
             {
