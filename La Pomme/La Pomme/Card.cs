@@ -45,18 +45,18 @@ namespace La_Pomme
         /// Gets the value without asset of the card
         /// </summary>
         /// <returns></returns>
-        public int GetCardValueWithoutAsset()
+        public int ValueWithoutAsset
         {
-            return valueWithoutAsset;
+            get { return valueWithoutAsset; }
         }
 
         /// <summary>
         /// Gets the value with asset of the card
         /// </summary>
         /// <returns></returns>
-        public int GetCardValueWithAsset()
+        public int ValueWithAsset
         {
-            return valueWithAsset;
+            get { return valueWithAsset; }
         }
 
         /// <summary>
@@ -72,27 +72,27 @@ namespace La_Pomme
         /// Get the type of the card
         /// </summary>
         /// <returns></returns>
-        public string GetCardType()
+        public string CardType
         {
-            return type;
+            get { return type; }
         }
 
         /// <summary>
         /// Gets the points of the card
         /// </summary>
         /// <returns></returns>
-        public int GetPointsWithoutAsset()
+        public int PointsWithoutAsset
         {
-            return pointsWithoutAsset;
+            get { return pointsWithoutAsset; }
         }
 
         /// <summary>
         /// Gets the points of the card if it is an asset
         /// </summary>
         /// <returns></returns>
-        public int GetPointsWithAsset()
+        public int PointsWithAsset
         {
-            return pointsWithAsset;
+            get { return pointsWithAsset; }
         }
     }
 }

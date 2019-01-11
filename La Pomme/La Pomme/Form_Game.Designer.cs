@@ -182,6 +182,7 @@
             // flpJ1PlayedCard
             // 
             this.flpJ1PlayedCard.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flpJ1PlayedCard.Enabled = false;
             this.flpJ1PlayedCard.Location = new System.Drawing.Point(215, 306);
             this.flpJ1PlayedCard.Name = "flpJ1PlayedCard";
             this.flpJ1PlayedCard.Size = new System.Drawing.Size(84, 105);
@@ -190,6 +191,7 @@
             // flpJ2PlayedCard
             // 
             this.flpJ2PlayedCard.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flpJ2PlayedCard.Enabled = false;
             this.flpJ2PlayedCard.Location = new System.Drawing.Point(215, 156);
             this.flpJ2PlayedCard.Name = "flpJ2PlayedCard";
             this.flpJ2PlayedCard.Size = new System.Drawing.Size(84, 105);
