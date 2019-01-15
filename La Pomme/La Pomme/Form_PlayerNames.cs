@@ -12,8 +12,7 @@ namespace La_Pomme
 {
     public partial class Form_PlayerNames : Form
     {
-        public static string player1Name;
-        public static string player2Name;
+        string[] playerNames = new string[2];
 
         public Form_PlayerNames()
         {
@@ -31,31 +30,16 @@ namespace La_Pomme
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void cmdValidate_Click(object sender, EventArgs e)
-        {
-            if(txtPlayer1.Text == String.Empty)
+        {            
+            if(txtPlayer1.Text == txtPlayer2.Text || txtPlayer1.Text == String.Empty || txtPlayer2.Text == String.Empty)
             {
-                player1Name = "Joueur 1";             
+                MessageBox.Show("Erreur dans le remplissage du formulaire.");
             }
             else
             {
-                player1Name = txtPlayer1.Text;               
-            }
-
-            if(txtPlayer2.Text == String.Empty)
-            {
-                player2Name = "Joueur 2";
-            }
-            else
-            {
-                player2Name = txtPlayer2.Text;
-            }
-            
-            if(txtPlayer1.Text == txtPlayer2.Text)
-            {
-                MessageBox.Show("Les 2 noms de joueurs ne peuvent être les mêmes.");
-            }
-            else
-            {
+                playerNames[0] = txtPlayer1.Text;
+                playerNames[1] = txtPlayer2.Text;
+                
                 Close();
             }
         }
@@ -66,8 +50,6 @@ namespace La_Pomme
         /// <returns>Array of strings with 2 player names</returns>
         public string[] GetPlayerNames()
         {
-            string[] playerNames = { player1Name, player2Name };
-
             return playerNames;
         }       
     }

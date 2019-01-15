@@ -26,9 +26,6 @@ namespace La_Pomme
         private int nbJ2WonCards = 0; // Used to store the number of the player 2 won cards
         private int j1Score = 0; // Used to store the score of the player 1
         private int j2Score = 0; // Used to store the score of the player 2
-        string victoryName = ""; // Used to store the name of the winner player
-        string victoryPoints = ""; // Used to store the final score of the winner player 
-        string victoryCards = ""; // Used to store the final number cards won the winner player
 
         private Random random;
                 
@@ -402,24 +399,27 @@ namespace La_Pomme
             if(flpPlayer1Deck.Controls.Count == 0)
             {
                 Form_Win form_Win = new Form_Win();
-                if (j1Score > j2Score)
+                string victorySentence;
+
+                if(j1Score == j2Score)
                 {
-                    victoryName = playerNames[0];
-                    victoryPoints = j1Score.ToString();
-                    victoryCards = nbJ1WonCards.ToString();
+                    victorySentence = "Egalité des 2 joueurs avec " + j1Score.ToString() + " points et " + nbJ1WonCards.ToString() + " cartes gagnées !";
                 }
                 else
                 {
-                    victoryName = playerNames[1];
-                    victoryPoints = j2Score.ToString();
-                    victoryCards = nbJ2WonCards.ToString();
+                    if (j1Score > j2Score)
+                    {
+                        victorySentence = playerNames[0] + " a gagné avec un total de " + j1Score.ToString() + " points et " + nbJ1WonCards.ToString() + " cartes gagnées !";
+                    }
+                    else
+                    {
+                        victorySentence = playerNames[1] + " a gagné avec un total de " + j2Score.ToString() + " points et " + nbJ2WonCards.ToString() + " cartes gagnées !";
+                    }
                 }
-                form_Win.VictoryName = victoryName;
-                form_Win.VictoryPoints = victoryPoints;
-                form_Win.VictoryCards = victoryCards;
+
+                form_Win.Sentence = victorySentence;
                 form_Win.ShowDialog();                
                 
-
                 Close();
             }
             else
