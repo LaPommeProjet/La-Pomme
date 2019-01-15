@@ -26,6 +26,9 @@ namespace La_Pomme
         private int nbJ2WonCards = 0; // Used to store the number of the player 2 won cards
         private int j1Score = 0; // Used to store the score of the player 1
         private int j2Score = 0; // Used to store the score of the player 2
+        string victoryName = ""; // Used to store the name of the winner player
+        string victoryPoints = ""; // Used to store the final score of the winner player 
+        string victoryCards = ""; // Used to store the final number cards won the winner player
 
         private Random random;
                 
@@ -358,7 +361,7 @@ namespace La_Pomme
 
             CheckForIllegalCrossThreadCalls = false; // To make disapear the two cards at the same time
 
-            Task.Delay(3000).ContinueWith(t => EndCardBattle()); // Delay before clearing the table
+            Task.Delay(1).ContinueWith(t => EndCardBattle()); // Delay before clearing the table
         }
 
         /// <summary>
@@ -398,11 +401,8 @@ namespace La_Pomme
 
             if(flpPlayer1Deck.Controls.Count == 0)
             {
-                string victoryName = "";
-                string victoryPoints = "";
-                string victoryCards = "";
-
-                if(j1Score > j2Score)
+                Form_Win form_Win = new Form_Win();
+                if (j1Score > j2Score)
                 {
                     victoryName = playerNames[0];
                     victoryPoints = j1Score.ToString();
@@ -414,8 +414,11 @@ namespace La_Pomme
                     victoryPoints = j2Score.ToString();
                     victoryCards = nbJ2WonCards.ToString();
                 }
-
-                MessageBox.Show("Victoire de " + victoryName + " qui a fait " + victoryPoints + " points en collectant " + victoryCards + " cartes!");
+                form_Win.VictoryName = victoryName;
+                form_Win.VictoryPoints = victoryPoints;
+                form_Win.VictoryCards = victoryCards;
+                form_Win.ShowDialog();                
+                
 
                 Close();
             }

@@ -49,8 +49,15 @@ namespace La_Pomme
             {
                 player2Name = txtPlayer2.Text;
             }
-
-            Close();
+            
+            if(txtPlayer1.Text == txtPlayer2.Text)
+            {
+                MessageBox.Show("Les 2 noms de joueurs ne peuvent être les mêmes.");
+            }
+            else
+            {
+                Close();
+            }
         }
 
         /// <summary>
