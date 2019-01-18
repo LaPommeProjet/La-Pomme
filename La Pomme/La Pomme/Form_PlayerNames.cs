@@ -33,7 +33,7 @@ namespace La_Pomme
         {            
             if(txtPlayer1.Text == txtPlayer2.Text || txtPlayer1.Text == String.Empty || txtPlayer2.Text == String.Empty)
             {
-                MessageBox.Show("Erreur dans le remplissage du formulaire.");
+                MessageBox.Show("Les noms ne peuvent être vides ou identiques.");
             }
             else
             {
