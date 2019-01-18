@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Threading;
 
 namespace La_Pomme
 {
     public partial class frmLaPomme : Form
     {
-        Form_PlayerNames form_PlayerNames = new Form_PlayerNames(); // Instanciate the second form to set the player names
+        Form_PlayerNames form_PlayerNames = new Form_PlayerNames(); // Instanciate the form to set the player names
+        Form_Console form_Console = new Form_Console(); // Instanciate the form to show the console
 
         private string[] playerNames; // Contains the player 1 name (index 0) and the player 2 name (index 1)
 
@@ -37,36 +39,19 @@ namespace La_Pomme
 
         private void frmLaPomme_Load(object sender, EventArgs e)
         {
-            form_PlayerNames.ShowDialog(); // Shows the second form
+            form_PlayerNames.ShowDialog();
             playerNames = form_PlayerNames.GetPlayerNames(); // Used to store the player names
+
+            form_Console.Show();
 
             lblPlayer1.Text = playerNames[0]; // Player 1 name
             lblPlayer2.Text = playerNames[1]; // Player 2 name
-           
+
             ImportCards();
             Shuffle(cards);
             SetAsset();
             SetPlayerDecks();
             SetPlayerTurn();
-        }
-
-        /// <summary>
-        /// Shuffle the cards list
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="list"></param>
-        public void Shuffle<T>(List<T> list)
-        {
-            int listLength = list.Count;
-
-            while (listLength > 1)
-            {
-                listLength--;
-                int randomIndex = random.Next(listLength + 1);
-                T value = list[randomIndex];
-                list[randomIndex] = list[listLength];
-                list[listLength] = value;
-            }
         }
 
         /// <summary>
@@ -88,6 +73,25 @@ namespace La_Pomme
                 card.Cursor = Cursors.Hand;
 
                 cards.Add(card);
+            }
+        }
+
+        /// <summary>
+        /// Shuffle the cards list
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="list"></param>
+        public void Shuffle<T>(List<T> list)
+        {
+            int listLength = list.Count;
+
+            while (listLength > 1)
+            {
+                listLength--;
+                int randomIndex = random.Next(listLength + 1);
+                T value = list[randomIndex];
+                list[randomIndex] = list[listLength];
+                list[listLength] = value;
             }
         }
 
@@ -129,20 +133,30 @@ namespace La_Pomme
         private void CardClickEvent(object sender, MouseEventArgs e)
         {
             PictureBox pictureBox = sender as PictureBox;
+            string playerName;
 
             if (playerTurn == 1)
             {
                 flpJ1PlayedCard.Controls.Add(pictureBox);
                 flpPlayer1Deck.Controls.Remove(pictureBox);
+                playerName = playerNames[0];
             }
             else
             {
                 flpJ2PlayedCard.Controls.Add(pictureBox);
                 flpPlayer2Deck.Controls.Remove(pictureBox);
+                playerName = playerNames[1];
             }
 
             nbPlayedCards++;
             SetPlayerTurn();
+
+            Card card = sender as Card;
+            form_Console.CardName = card.CardName;
+            form_Console.CardType = card.CardType;
+            form_Console.PlayerName = playerName;
+
+            form_Console.WriteLine();
 
             // When the 2 players have played a card
             if (nbPlayedCards == 2)

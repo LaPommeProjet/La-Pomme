@@ -42,7 +42,7 @@ namespace La_Pomme
         }  
 
         /// <summary>
-        /// Gets the value without asset of the card
+        /// Get the value without asset of the card
         /// </summary>
         /// <returns></returns>
         public int ValueWithoutAsset
@@ -51,7 +51,7 @@ namespace La_Pomme
         }
 
         /// <summary>
-        /// Gets the value with asset of the card
+        /// Get the value with asset of the card
         /// </summary>
         /// <returns></returns>
         public int ValueWithAsset
@@ -63,9 +63,9 @@ namespace La_Pomme
         /// Get the name of the card
         /// </summary>
         /// <returns></returns>
-        public string GetName()
+        public string CardName
         {
-            return name;
+            get { return name; }
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace La_Pomme
         }
 
         /// <summary>
-        /// Gets the points of the card if it is an asset
+        /// Get the points of the card if it is an asset
         /// </summary>
         /// <returns></returns>
         public int PointsWithAsset

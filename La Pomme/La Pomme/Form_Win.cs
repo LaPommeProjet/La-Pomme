@@ -42,16 +42,21 @@ namespace La_Pomme
             lblWin.Text = victorySentence;
         }
 
-        private void cmdOk_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
+        /// <summary>
+        /// Leave the game
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cmdLeave_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        /// <summary>
+        /// Play again
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cmdPlayAgain_Click(object sender, EventArgs e)
         {
             Application.Restart();

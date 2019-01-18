@@ -45,7 +45,6 @@
             this.cmdOk.TabIndex = 1;
             this.cmdOk.Text = "Ok";
             this.cmdOk.UseVisualStyleBackColor = true;
-            this.cmdOk.Click += new System.EventHandler(this.cmdOk_Click);
             // 
             // ptbTrophee
             // 

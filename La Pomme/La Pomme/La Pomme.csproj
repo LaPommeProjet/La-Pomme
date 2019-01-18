@@ -64,6 +64,12 @@
     <Compile Include="Card.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Form_Console.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Console.Designer.cs">
+      <DependentUpon>Form_Console.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Game.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form_Console.resx">
+      <DependentUpon>Form_Console.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Game.resx">
       <DependentUpon>Form_Game.cs</DependentUpon>
     </EmbeddedResource>
