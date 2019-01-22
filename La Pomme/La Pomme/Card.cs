@@ -14,6 +14,7 @@ namespace La_Pomme
 
         private string type;
         private string name;
+        private string image;
         private int valueWithAsset;
         private int valueWithoutAsset;
         private int pointsWithoutAsset;
@@ -36,6 +37,7 @@ namespace La_Pomme
             this.valueWithAsset = valueWithAsset;
             this.pointsWithoutAsset = pointsWithoutAsset;
             this.pointsWithAsset = pointsWithAsset;
+            this.image = image;
             this.ImageLocation = image;
             this.Height = CARD_HEIGHT;
             this.Width = CARD_WIDTH;
@@ -93,6 +95,14 @@ namespace La_Pomme
         public int PointsWithAsset
         {
             get { return pointsWithAsset; }
+        }
+
+        /// <summary>
+        /// Get the image location of the card
+        /// </summary>
+        public string GetImage
+        {
+            get { return image; }
         }
     }
 }

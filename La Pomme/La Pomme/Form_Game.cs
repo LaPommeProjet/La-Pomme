@@ -178,6 +178,18 @@ namespace La_Pomme
                 lblPlayer1.ForeColor = Color.White;
                 lblPlayer2.ForeColor = Color.Crimson;
 
+                // Hide or show the deck
+                foreach(PictureBox pictureBox in flpPlayer1Deck.Controls)
+                {
+                    pictureBox.ImageLocation = @"dos.png";
+                }
+
+                foreach (PictureBox pictureBox in flpPlayer2Deck.Controls)
+                {
+                    Card card = pictureBox as Card;
+                    card.ImageLocation = card.GetImage;
+                }
+
                 playerTurn = 2;
             }
             else
@@ -187,6 +199,18 @@ namespace La_Pomme
 
                 lblPlayer1.ForeColor = Color.Crimson;
                 lblPlayer2.ForeColor = Color.White;
+
+                // Hide or show the deck
+                foreach (PictureBox pictureBox in flpPlayer2Deck.Controls)
+                {
+                    pictureBox.ImageLocation = @"dos.png";
+                }
+
+                foreach (PictureBox pictureBox in flpPlayer1Deck.Controls)
+                {
+                    Card card = pictureBox as Card;
+                    card.ImageLocation = card.GetImage;
+                }
 
                 playerTurn = 1;
             } 
