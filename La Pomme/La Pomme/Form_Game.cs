@@ -156,7 +156,7 @@ namespace La_Pomme
             // When the 2 players have played a card
             if (nbPlayedCards == 2)
             {
-                CardBattle(); // Calls the card battle function when the second player played
+                CardBattleAsync(); // Calls the card battle function when the second player played
                 nbPlayedCards = 0;
             }
             else
@@ -315,7 +315,7 @@ namespace La_Pomme
         /// <summary>
         /// Test which card is the best and gives points to the player
         /// </summary>
-        private void CardBattle()
+        private async Task CardBattleAsync()
         {
             // Stores the pictureboxes controls as a card
             Card j1PlayedCard = flpJ1PlayedCard.Controls[0] as Card;
@@ -389,9 +389,9 @@ namespace La_Pomme
                 }
             }
 
-            CheckForIllegalCrossThreadCalls = false; // To make disapear the two cards at the same time
+            await Task.Run(() => { return Task.Delay(1500); }); // Delay before clearing the table
 
-            Task.Delay(3000).ContinueWith(t => EndCardBattle()); // Delay before clearing the table
+            EndCardBattle();
         }
 
         /// <summary>
