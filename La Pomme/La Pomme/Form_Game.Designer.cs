@@ -127,6 +127,7 @@
             // 
             // ptbPioche
             // 
+            this.ptbPioche.BackColor = System.Drawing.Color.SeaGreen;
             this.ptbPioche.Image = ((System.Drawing.Image)(resources.GetObject("ptbPioche.Image")));
             this.ptbPioche.Location = new System.Drawing.Point(663, 241);
             this.ptbPioche.Name = "ptbPioche";

@@ -41,7 +41,7 @@
             this.lblPlayer1.AutoSize = true;
             this.lblPlayer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayer1.ForeColor = System.Drawing.Color.White;
-            this.lblPlayer1.Location = new System.Drawing.Point(40, 46);
+            this.lblPlayer1.Location = new System.Drawing.Point(40, 41);
             this.lblPlayer1.Name = "lblPlayer1";
             this.lblPlayer1.Size = new System.Drawing.Size(71, 20);
             this.lblPlayer1.TabIndex = 0;
@@ -52,7 +52,7 @@
             this.lblPlayer2.AutoSize = true;
             this.lblPlayer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayer2.ForeColor = System.Drawing.Color.White;
-            this.lblPlayer2.Location = new System.Drawing.Point(40, 98);
+            this.lblPlayer2.Location = new System.Drawing.Point(40, 85);
             this.lblPlayer2.Name = "lblPlayer2";
             this.lblPlayer2.Size = new System.Drawing.Size(71, 20);
             this.lblPlayer2.TabIndex = 1;
@@ -60,23 +60,24 @@
             // 
             // txtPlayer1
             // 
-            this.txtPlayer1.Location = new System.Drawing.Point(117, 46);
-            this.txtPlayer1.MaxLength = 30;
+            this.txtPlayer1.Location = new System.Drawing.Point(117, 41);
+            this.txtPlayer1.MaxLength = 15;
             this.txtPlayer1.Name = "txtPlayer1";
             this.txtPlayer1.Size = new System.Drawing.Size(177, 20);
             this.txtPlayer1.TabIndex = 2;
             // 
             // txtPlayer2
             // 
-            this.txtPlayer2.Location = new System.Drawing.Point(117, 98);
-            this.txtPlayer2.MaxLength = 30;
+            this.txtPlayer2.Location = new System.Drawing.Point(117, 87);
+            this.txtPlayer2.MaxLength = 15;
             this.txtPlayer2.Name = "txtPlayer2";
             this.txtPlayer2.Size = new System.Drawing.Size(177, 20);
             this.txtPlayer2.TabIndex = 3;
             // 
             // cmdValidate
             // 
-            this.cmdValidate.Location = new System.Drawing.Point(126, 164);
+            this.cmdValidate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmdValidate.Location = new System.Drawing.Point(129, 146);
             this.cmdValidate.Name = "cmdValidate";
             this.cmdValidate.Size = new System.Drawing.Size(75, 23);
             this.cmdValidate.TabIndex = 4;
@@ -89,7 +90,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaGreen;
-            this.ClientSize = new System.Drawing.Size(331, 208);
+            this.ClientSize = new System.Drawing.Size(331, 192);
             this.Controls.Add(this.cmdValidate);
             this.Controls.Add(this.txtPlayer2);
             this.Controls.Add(this.txtPlayer1);
@@ -101,7 +102,6 @@
             this.Name = "Form_PlayerNames";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Choix du nom des joueurs";
-            this.Load += new System.EventHandler(this.Form_PlayerNames_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

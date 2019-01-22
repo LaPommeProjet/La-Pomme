@@ -42,6 +42,7 @@ namespace La_Pomme
             form_PlayerNames.ShowDialog();
             playerNames = form_PlayerNames.GetPlayerNames(); // Used to store the player names
 
+            form_Console.SetNames(playerNames); // Set the player names in the other form
             form_Console.Show();
 
             lblPlayer1.Text = playerNames[0]; // Player 1 name
@@ -133,30 +134,24 @@ namespace La_Pomme
         private void CardClickEvent(object sender, MouseEventArgs e)
         {
             PictureBox pictureBox = sender as PictureBox;
-            string playerName;
 
             if (playerTurn == 1)
             {
-                flpJ1PlayedCard.Controls.Add(pictureBox);
+                flpJ1PlayedCard.Controls.Add(pictureBox);               
                 flpPlayer1Deck.Controls.Remove(pictureBox);
-                playerName = playerNames[0];
+
+                form_Console.ShowCard(1, pictureBox.ImageLocation);
             }
             else
             {
                 flpJ2PlayedCard.Controls.Add(pictureBox);
                 flpPlayer2Deck.Controls.Remove(pictureBox);
-                playerName = playerNames[1];
+
+                form_Console.ShowCard(2, pictureBox.ImageLocation);
             }
 
             nbPlayedCards++;
-            SetPlayerTurn();
-
-            Card card = sender as Card;
-            form_Console.CardName = card.CardName;
-            form_Console.CardType = card.CardType;
-            form_Console.PlayerName = playerName;
-
-            form_Console.WriteLine();
+            SetPlayerTurn();        
 
             // When the 2 players have played a card
             if (nbPlayedCards == 2)
@@ -372,7 +367,7 @@ namespace La_Pomme
 
             CheckForIllegalCrossThreadCalls = false; // To make disapear the two cards at the same time
 
-            Task.Delay(1).ContinueWith(t => EndCardBattle()); // Delay before clearing the table
+            Task.Delay(3000).ContinueWith(t => EndCardBattle()); // Delay before clearing the table
         }
 
         /// <summary>
@@ -386,6 +381,8 @@ namespace La_Pomme
             lblScoreJ1.Text = "Score : " + score.ToString() + " pts"; // Shows the player 1 score
 
             firstPlayer = 1; // To know which player won
+
+            form_Console.ShowWinCard(1);
         }
 
         /// <summary>
@@ -399,6 +396,8 @@ namespace La_Pomme
             lblScoreJ2.Text = "Score : " + score.ToString() + " pts"; // Shows the player 2 score
 
             firstPlayer = 2; // To know which player won
+
+            form_Console.ShowWinCard(2);
         }
 
         /// <summary>

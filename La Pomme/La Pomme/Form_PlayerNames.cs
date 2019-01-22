@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace La_Pomme
 {
@@ -17,11 +18,6 @@ namespace La_Pomme
         public Form_PlayerNames()
         {
             InitializeComponent();
-        }
-
-        private void Form_PlayerNames_Load(object sender, EventArgs e)
-        {
-            cmdValidate.Cursor = Cursors.Hand;
         }
 
         /// <summary>
@@ -51,6 +47,6 @@ namespace La_Pomme
         public string[] GetPlayerNames()
         {
             return playerNames;
-        }       
+        }
     }
 }

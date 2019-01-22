@@ -12,7 +12,8 @@ namespace La_Pomme
 {
     public partial class Form_Console : Form
     {
-        string cardName, cardType, playerName;
+        private const int HEIGHT = 80;
+        private const int WIDTH = 56;      
 
         public Form_Console()
         {
@@ -20,32 +21,66 @@ namespace La_Pomme
         }
 
         /// <summary>
-        /// Get or set the name of the card
+        /// Set the labels with the names
         /// </summary>
-        public string CardName
+        /// <param name="names"></param>
+        public void SetNames(string[] names)
         {
-            get
-            {
-                return cardName;
-            }
-            set
-            {
-                cardName = value;
-            }
+            lblPlayer1.Text = names[0];
+            lblPlayer2.Text = names[1];
         }
 
         /// <summary>
-        /// Get or set the type of the card
+        /// Shows the played card
         /// </summary>
-        public string CardType
+        /// <param name="player"></param>
+        /// <param name="card"></param>
+        public void ShowCard(int player, string card)
         {
-            get
+            PictureBox pictureBox = new PictureBox();
+            pictureBox.ImageLocation = card;
+            pictureBox.Height = HEIGHT;
+            pictureBox.Width = WIDTH;
+            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            if (player == 1)
             {
-                return cardType;
+                flpPlayer1.Controls.Add(pictureBox);
             }
-            set
+            else
             {
-                cardType = value;
+                flpPlayer2.Controls.Add(pictureBox);
+            }
+        }       
+
+        /// <summary>
+        /// Shows which card won
+        /// </summary>
+        /// <param name="player"></param>
+        public void ShowWinCard(int player)
+        {
+            PictureBox win = new PictureBox();
+            PictureBox lose = new PictureBox();
+
+            win.ImageLocation = @"vu.png";
+            win.Height = HEIGHT;
+            win.Width = WIDTH;
+            win.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            lose.ImageLocation = @"croix.png";
+            lose.Height = HEIGHT;
+            lose.Width = WIDTH;
+            lose.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            if (player == 1)
+            {
+                flpP1Result.Controls.Add(win);
+                flpP2Result.Controls.Add(lose);     
+            }
+            else
+            {
+                flpP1Result.Controls.Add(lose);
+                flpP2Result.Controls.Add(win);
             }
         }
 
@@ -57,29 +92,6 @@ namespace La_Pomme
         private void cmdLeave_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        /// <summary>
-        /// Get or set the name of the player
-        /// </summary>
-        public string PlayerName
-        {
-            get
-            {
-                return playerName;
-            }
-            set
-            {
-                playerName = value;
-            }
-        }
-
-        /// <summary>
-        /// Write who played what
-        /// </summary>
-        public void WriteLine()
-        {
-            lstText.Items.Add(playerName + " a joué : " + cardName + " de " + cardType + ".\n");
         }
     }
 }
